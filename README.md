@@ -15,9 +15,9 @@
 
 ---
 
-## 🔬 The Problem
+## The Problem
 
-**Fundus Autofluorescence (FAF)** imaging reveals metabolic changes in the retinal pigment epithelium that are *invisible* in standard colour photographs — making it crucial for diagnosing diseases like Choroiditis, AMD, and Retinitis Pigmentosa. However, **FAF machines cost lakhs of rupees** and are unavailable in rural or low-resource clinical settings.
+**Fundus Autofluorescence (FAF)** imaging reveals metabolic changes in the retinal pigment epithelium that are _invisible_ in standard colour photographs — making it crucial for diagnosing diseases like Choroiditis, AMD, and Retinitis Pigmentosa. However, **FAF machines cost lakhs of rupees** and are unavailable in rural or low-resource clinical settings.
 
 **Our solution:** Replace the expensive hardware with AI. A simple **RGB camera + 20D lens** (costing under ₹5,000) captures a Colour Fundus (CF) image, and a two-stage deep learning pipeline does the rest — translating CF to synthetic FAF, classifying the disease, and highlighting the affected region.
 
@@ -36,11 +36,11 @@
 
 ---
 
-## 🔄 Pipeline
+## Pipeline
 
 ```mermaid
 flowchart LR
-    subgraph HW["🔩 Hardware"]
+    subgraph HW["Hardware"]
         A["3D-Printed Scope\n+ 20D Lens\n+ RGB Camera"]
     end
 
@@ -56,7 +56,7 @@ flowchart LR
         D["Grad-CAM\nHeatmap"]
     end
 
-    subgraph OUT["📋 Output"]
+    subgraph OUT["Output"]
         E["Disease Diagnosis\n+ Region Highlight"]
     end
 
@@ -76,7 +76,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    subgraph TRAIN["🎓 Training Phase (Offline)"]
+    subgraph TRAIN["Training Phase (Offline)"]
         direction LR
         CF_DATA["315 Unpaired\nCF Images"] --> CYCLEGAN_TRAIN["Train CycleGAN\n100 epochs\nKaggle P100"]
         FAF_DATA["309 Unpaired\nFAF Images"] --> CYCLEGAN_TRAIN
@@ -86,7 +86,7 @@ flowchart TB
         RESNET_TRAIN --> WEIGHTS_RN["Classifier Weights\n(best_resnet.pth)"]
     end
 
-    subgraph INFER["🚀 Inference Pipeline (Real-time)"]
+    subgraph INFER["Inference Pipeline (Real-time)"]
         direction LR
         INPUT["CF Image"] --> GEN["CycleGAN\nGenerator"] --> FAF_OUT["Synthetic\nFAF"]
         FAF_OUT --> CLASS["ResNet-18\nClassifier"]
@@ -104,7 +104,7 @@ flowchart TB
 
 ---
 
-## 📊 Results
+## Results
 
 ### CycleGAN — CF to FAF Translation
 
@@ -120,11 +120,11 @@ The CycleGAN learns to translate Colour Fundus images into synthetic FAF images 
 
 #### CycleGAN vs. Pix2Pix Baseline
 
-| Metric | Pix2Pix (Baseline) | CycleGAN (Ours) | Improvement |
-|--------|-------------------|-----------------|-------------|
-| **SSIM** | 0.2333 | **0.6076** | **+160%** |
-| **PSNR** | 15.99 dB | **24.04 dB** | **+8.05 dB** |
-| **MAE** | — | **0.0500** | — |
+| Metric   | Pix2Pix (Baseline) | CycleGAN (Ours) | Improvement  |
+| -------- | ------------------ | --------------- | ------------ |
+| **SSIM** | 0.2333             | **0.6076**      | **+160%**    |
+| **PSNR** | 15.99 dB           | **24.04 dB**    | **+8.05 dB** |
+| **MAE**  | —                  | **0.0500**      | —            |
 
 > CycleGAN outperforms Pix2Pix on every metric, for every disease case — while requiring **no paired data**.
 
@@ -132,12 +132,12 @@ The CycleGAN learns to translate Colour Fundus images into synthetic FAF images 
 
 3-class classifier trained on CycleGAN-generated FAF images using transfer learning (ImageNet pretrained, only FC layer fine-tuned).
 
-| Metric | Value |
-|--------|-------|
-| **Validation Accuracy** | **76.92%** |
-| Training Accuracy | 75.51% |
-| Classes | Choroiditis, Normal, Scar |
-| Dataset Size | 62 images (49 train / 13 val) |
+| Metric                  | Value                         |
+| ----------------------- | ----------------------------- |
+| **Validation Accuracy** | **76.92%**                    |
+| Training Accuracy       | 75.51%                        |
+| Classes                 | Choroiditis, Normal, Scar     |
+| Dataset Size            | 62 images (49 train / 13 val) |
 
 <div align="center">
   <img src="images/confusion_matrix.png" width="700"/>
@@ -169,7 +169,7 @@ Grad-CAM highlights which regions of the FAF image contributed most to the class
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -196,6 +196,7 @@ Since model weights are not included in this repo (they are too large for GitHub
 Open `notebooks/cyclegan/CycleGAN_Training.ipynb` on [Kaggle](https://www.kaggle.com) (recommended — free P100 GPU) or locally with a CUDA GPU. This notebook trains the CycleGAN for 100 epochs on unpaired CF and FAF images.
 
 You will need:
+
 - A folder of Colour Fundus (CF) images
 - A folder of FAF images (do not need to be paired)
 
@@ -208,6 +209,7 @@ Use `notebooks/cyclegan/CycleGAN_Bulk_Translation.ipynb` to translate your CF im
 Open `notebooks/resnet/ResNet_Training_3Classes.ipynb`. This fine-tunes a pretrained ResNet-18 on the generated FAF images for 3-class disease classification.
 
 You will need:
+
 - Generated FAF images organized in folders by class (e.g., `Choroiditis/`, `Normal/`, `Scar/`)
 
 **4. Run the Streamlit demo**
@@ -220,7 +222,7 @@ streamlit run app/Whole_Pipeline.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 RetinalAI/
@@ -259,19 +261,19 @@ RetinalAI/
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 ### Stage 1: CycleGAN (Unpaired Image Translation)
 
-| Component | Details |
-|-----------|---------|
-| **Generator** | UNet with skip connections, 48 initial features |
-| **Discriminator** | PatchGAN with InstanceNorm |
-| **Training data** | 315 CF + 309 FAF images (unpaired) |
-| **Image size** | 256 × 256 (with jittering augmentation) |
-| **Epochs** | 100 (best checkpoint at epoch 95) |
-| **Platform** | Kaggle P100 GPU (~63 hours) |
-| **Loss** | Adversarial + Cycle-consistency (L1) |
+| Component         | Details                                         |
+| ----------------- | ----------------------------------------------- |
+| **Generator**     | UNet with skip connections, 48 initial features |
+| **Discriminator** | PatchGAN with InstanceNorm                      |
+| **Training data** | 315 CF + 309 FAF images (unpaired)              |
+| **Image size**    | 256 × 256 (with jittering augmentation)         |
+| **Epochs**        | 100 (best checkpoint at epoch 95)               |
+| **Platform**      | Kaggle P100 GPU (~63 hours)                     |
+| **Loss**          | Adversarial + Cycle-consistency (L1)            |
 
 <div align="center">
   <img src="images/cyclegan_architecture.png" width="600"/>
@@ -281,72 +283,72 @@ RetinalAI/
 
 ### Stage 2: ResNet-18 (Transfer Learning Classification)
 
-| Component | Details |
-|-----------|---------|
-| **Base model** | ResNet-18 pretrained on ImageNet |
-| **Strategy** | Frozen convolutional layers, only FC layer trained |
-| **FC layer** | `nn.Linear(512, 3)` — 3 output classes |
-| **Training data** | 62 generated FAF images (49 train / 13 val) |
-| **Optimizer** | Adam (lr=0.0005) |
-| **Epochs** | 40 (best at epoch 22) |
-| **Accuracy** | **76.92%** validation accuracy |
+| Component         | Details                                            |
+| ----------------- | -------------------------------------------------- |
+| **Base model**    | ResNet-18 pretrained on ImageNet                   |
+| **Strategy**      | Frozen convolutional layers, only FC layer trained |
+| **FC layer**      | `nn.Linear(512, 3)` — 3 output classes             |
+| **Training data** | 62 generated FAF images (49 train / 13 val)        |
+| **Optimizer**     | Adam (lr=0.0005)                                   |
+| **Epochs**        | 40 (best at epoch 22)                              |
+| **Accuracy**      | **76.92%** validation accuracy                     |
 
 ### Stage 3: Grad-CAM (Explainability)
 
-| Component | Details |
-|-----------|---------|
-| **Method** | Gradient-weighted Class Activation Mapping |
-| **Target layer** | `model.layer4[-1]` (last conv block of ResNet-18) |
+| Component               | Details                                            |
+| ----------------------- | -------------------------------------------------- |
+| **Method**              | Gradient-weighted Class Activation Mapping         |
+| **Target layer**        | `model.layer4[-1]` (last conv block of ResNet-18)  |
 | **Additional training** | None — uses gradients from the existing classifier |
-| **Output** | Heatmap overlay showing disease-relevant regions |
-| **Reference** | Selvaraju et al., "Grad-CAM", ICCV 2017 |
+| **Output**              | Heatmap overlay showing disease-relevant regions   |
+| **Reference**           | Selvaraju et al., "Grad-CAM", ICCV 2017            |
 
 ### Hardware Component
 
-| Component | Details |
-|-----------|---------|
-| **Scope** | 3D-printed housing |
-| **Lens** | 20D ophthalmic lens |
-| **Light source** | White LED |
-| **Camera** | Standard RGB camera |
-| **Total cost** | Under ₹5,000 |
+| Component        | Details             |
+| ---------------- | ------------------- |
+| **Scope**        | 3D-printed housing  |
+| **Lens**         | 20D ophthalmic lens |
+| **Light source** | White LED           |
+| **Camera**       | Standard RGB camera |
+| **Total cost**   | Under ₹5,000        |
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Deep Learning** | PyTorch, TorchVision |
+| Layer                 | Technology                                         |
+| --------------------- | -------------------------------------------------- |
+| **Deep Learning**     | PyTorch, TorchVision                               |
 | **Image Translation** | CycleGAN (UNet Generator + PatchGAN Discriminator) |
-| **Classification** | ResNet-18 (ImageNet pretrained, fine-tuned) |
-| **Explainability** | Grad-CAM (custom implementation) |
-| **Demo UI** | Streamlit |
-| **Image Processing** | OpenCV, Pillow, NumPy |
-| **Training Platform** | Kaggle (P100 GPU) |
+| **Classification**    | ResNet-18 (ImageNet pretrained, fine-tuned)        |
+| **Explainability**    | Grad-CAM (custom implementation)                   |
+| **Demo UI**           | Streamlit                                          |
+| **Image Processing**  | OpenCV, Pillow, NumPy                              |
+| **Training Platform** | Kaggle (P100 GPU)                                  |
 
 ---
 
-## 🎯 Key Design Decisions
+## Key Design Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| **CycleGAN over Pix2Pix** | No paired data required — more practical for clinical data collection |
-| **UNet generator (not ResNet)** | Skip connections preserve fine spatial details crucial for retinal structures |
-| **3 classes (not 17)** | Small dataset (62 images) forced a trade-off; 3 classes maximized reliability at 76.92% vs. 58.62% for 5 classes |
-| **ResNet-18 (not ResNet-50)** | Smaller model prevents overfitting on the tiny dataset |
-| **Frozen encoder** | Standard transfer learning — prevents catastrophic forgetting of ImageNet features |
-| **Grad-CAM for segmentation** | Zero additional training, no annotations needed, academically established (ICCV 2017) |
+| Decision                        | Rationale                                                                                                        |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **CycleGAN over Pix2Pix**       | No paired data required — more practical for clinical data collection                                            |
+| **UNet generator (not ResNet)** | Skip connections preserve fine spatial details crucial for retinal structures                                    |
+| **3 classes (not 17)**          | Small dataset (62 images) forced a trade-off; 3 classes maximized reliability at 76.92% vs. 58.62% for 5 classes |
+| **ResNet-18 (not ResNet-50)**   | Smaller model prevents overfitting on the tiny dataset                                                           |
+| **Frozen encoder**              | Standard transfer learning — prevents catastrophic forgetting of ImageNet features                               |
+| **Grad-CAM for segmentation**   | Zero additional training, no annotations needed, academically established (ICCV 2017)                            |
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Dataset provided by collaborating ophthalmologists
 - CycleGAN trained on [Kaggle](https://www.kaggle.com) P100 GPU
