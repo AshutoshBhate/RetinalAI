@@ -72,7 +72,6 @@ The split lists are in [`Dataset/Splits/`](Dataset/Splits) and the code that mak
 | ----- | ---- | ---- | --- |
 | CycleGAN, trained without the test patients | 0.258 | 14.07 dB | 0.168 |
 | Pix2Pix, trained without the test patients | 0.324 | 17.40 dB | 0.113 |
-| Original CycleGAN (it had trained on these patients, so not a fair test) | 0.278 | 15.58 dB | 0.143 |
 | Baseline: one fixed image, the average training FAF | 0.372 | 17.48 dB | 0.113 |
 | Baseline: a grey copy of the CF photo | 0.237 | 10.69 dB | 0.256 |
 
@@ -103,14 +102,6 @@ Cross-validation is patient-grouped, 5 folds, averaged over 5 seeds. The test se
 </div>
 
 Both versions are close to always answering the largest class, so the GAN step neither helps nor hurts the classifier here. With 13 test photos, each photo moves accuracy by 7.7 percentage points, so treat the test numbers as rough.
-
-### Earlier numbers
-
-An earlier version of this README reported SSIM 0.6076 / PSNR 24.04 dB and 76.92% accuracy. Those came from the notebooks, but they were not test results:
-
-- **0.6076** was the best single pair out of 259, and the CycleGAN had trained on those photos. Its average over all 259 pairs was 0.2585.
-- **76.92%** (10/13) was the best of 40 epochs, chosen on the same 13 validation photos it was reported on. The split was random by image, so a patient's two eyes could land on both sides. Scored by patient with 5-fold cross-validation, the same recipe averages 45.5%, close to always answering the largest class (43.5%).
-- The Pix2Pix baseline **0.2333** came from an early run trained on 28 pairs. A Pix2Pix trained on all 259 pairs reached 0.2794 on its own validation split.
 
 ---
 
@@ -181,12 +172,12 @@ RetinalAI/
 │   └── Results/                    Scores, training logs and figures from my runs
 ├── Dataset/Splits/                 Patient split lists
 ├── notebooks/
-│   ├── cyclegan/                   Original CycleGAN training, translation and metrics notebooks
-│   └── resnet/                     Original ResNet-18 training and evaluation notebooks
+│   ├── cyclegan/                   CycleGAN training, translation and metrics notebooks
+│   └── resnet/                     ResNet-18 training and evaluation notebooks
 └── images/                         Figures for this README
 ```
 
-The notebooks are the original project notebooks, kept as they were run. Their numbers are the "earlier numbers" above.
+The notebooks are the project's exploration notebooks (CycleGAN training on Kaggle, translation, metrics and ResNet training). The results above come from the scripts in `evaluation/`.
 
 ---
 
@@ -240,6 +231,7 @@ Grad-CAM uses the classifier's gradients at `layer4` to make a 7×7 map of the i
 ## Limitations
 
 - **Small data.** 22 test patients for the GANs and 13 test photos for the classifier.
+- **Labels per patient.** The hospital labels both eyes with the patient's diagnosis, so some "Choroiditis" photos show the patient's unaffected eye and look normal. Per-eye labels would need an ophthalmologist.
 - **One source.** All photos come from the same hospital datasets. There is no external test set.
 - **Pixel metrics.** SSIM and PSNR can't judge whether a synthetic FAF is clinically useful. That needs ophthalmologists to grade the images.
 - **No hardware.** The capture device was planned, not built.
