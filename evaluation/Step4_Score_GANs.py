@@ -22,7 +22,6 @@ SEED = 2026
 BOOTSTRAP_ROUNDS = 2000
 
 GENERATORS = {
-    "Old CycleGAN (saw every patient)": os.path.join(BE_PROJECT, "cycleGAN_Weights", "G_AB_95.pth"),
     "CycleGAN without test patients": os.path.join(BE_PROJECT, "cycleGAN_Weights_TrainOnly", "G_AB_95.pth"),
     "Pix2Pix without test patients": os.path.join(BE_PROJECT, "pix2pix_Weights_TrainOnly", "best_gen.pth"),
 }
@@ -137,32 +136,11 @@ def main():
         line = " | ".join(f"{name.split(' (')[0].replace('Baseline: ', '')}: {summary[name]['ssim_by_disease'][disease]:.3f}" for name in summary)
         print(f"   {disease} ({count} pairs): {line}")
 
-    old_name = "Old CycleGAN (saw every patient)"
-    if old_name in predictions:
-        all_pairs = sorted(train_pairs + test_pairs)
-        old_results = score_pairs(old_name + ", all master pairs", predictions[old_name], all_pairs, rows)
-        old_ssim = np.array([result["ssim"] for result in old_results])
-        best = max(old_results, key=lambda result: result["ssim"])
-        summary[old_name + ", all master pairs"] = {
-            "pairs": len(old_results),
-            "ssim_mean": float(old_ssim.mean()),
-            "ssim_median": float(np.median(old_ssim)),
-            "ssim_best_single_pair": best["ssim"],
-            "best_pair": best["cf"],
-            "share_above_0.2333": float(np.mean(old_ssim > 0.2333)),
-            "psnr_mean": float(np.mean([result["psnr"] for result in old_results])),
-            "mae_mean": float(np.mean([result["mae"] for result in old_results])),
-        }
-        print(f"\n{old_name} on all {len(old_results)} master pairs (not a test, it trained on these photos): "
-              f"SSIM mean {old_ssim.mean():.4f}, median {np.median(old_ssim):.4f}, best single pair {best['ssim']:.4f} ({os.path.basename(best['cf'])}), "
-              f"{np.mean(old_ssim > 0.2333):.1%} of pairs above 0.2333")
-        per_pair.extend(old_results)
-
-    with open(os.path.join(RESULTS_DIR, "Step5_GAN_scores_per_pair.csv"), "w", newline="") as handle:
+    with open(os.path.join(RESULTS_DIR, "Step4_GAN_scores_per_pair.csv"), "w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["model", "cf", "disease", "patient", "ssim", "psnr", "mae"])
         writer.writeheader()
         writer.writerows(per_pair)
-    with open(os.path.join(RESULTS_DIR, "Step5_GAN_scores.json"), "w") as handle:
+    with open(os.path.join(RESULTS_DIR, "Step4_GAN_scores.json"), "w") as handle:
         json.dump({"test_pairs": len(test_pairs), "test_patients": len(set(patients)), "models": summary}, handle, indent=1)
 
 

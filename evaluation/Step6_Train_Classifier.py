@@ -178,7 +178,7 @@ def main():
             torch.save(model.state_dict(), os.path.join(WEIGHTS_DIR, "resnet_faf_classifier.pth"))
             print(f"saved {os.path.join(WEIGHTS_DIR, 'resnet_faf_classifier.pth')}")
 
-    with open(os.path.join(RESULTS_DIR, "Step7_Classifier_TrainOnly.json"), "w") as handle:
+    with open(os.path.join(RESULTS_DIR, "Step6_Classifier.json"), "w") as handle:
         json.dump(results, handle, indent=1)
 
 

@@ -53,7 +53,7 @@ def translate(generator, image):
 
 
 def median_examples():
-    with open(os.path.join(RESULTS_DIR, "Step5_GAN_scores_per_pair.csv")) as handle:
+    with open(os.path.join(RESULTS_DIR, "Step4_GAN_scores_per_pair.csv")) as handle:
         rows = [row for row in csv.DictReader(handle) if row["model"] == SCORED_MODEL]
     median = np.median([float(row["ssim"]) for row in rows])
     rows.sort(key=lambda row: abs(float(row["ssim"]) - median))
@@ -101,7 +101,7 @@ def readme_sample():
 
 
 def test_confusion_matrix():
-    with open(os.path.join(RESULTS_DIR, "Step7_Classifier_TrainOnly.json")) as handle:
+    with open(os.path.join(RESULTS_DIR, "Step6_Classifier.json")) as handle:
         result = json.load(handle)[CLASSIFIER_SOURCE]
     matrix = np.array(result["test_confusion_matrix"])
     figure, axis = plt.subplots(figsize=(4.6, 4.2))

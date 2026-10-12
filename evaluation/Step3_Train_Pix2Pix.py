@@ -189,7 +189,7 @@ def main():
                 print("Early stopping triggered! Training has finished.")
                 break
 
-    with open(os.path.join(RESULTS_DIR, "Step4_Pix2Pix_training.json"), "w") as handle:
+    with open(os.path.join(RESULTS_DIR, "Step3_Pix2Pix_training.json"), "w") as handle:
         json.dump({
             "training_pairs": len(training),
             "validation_pairs": len(validation),

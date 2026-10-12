@@ -1,17 +1,14 @@
 test pairs: 39 from 20 test patients
 Baseline: grey copy of the CF photo: SSIM 0.2371 (median 0.2254, 95% range 0.200-0.273) | PSNR 10.69 dB | MAE 0.2558
 Baseline: average training FAF: SSIM 0.3720 (median 0.3584, 95% range 0.310-0.435) | PSNR 17.48 dB | MAE 0.1131
-Old CycleGAN (saw every patient): SSIM 0.2780 (median 0.2408, 95% range 0.228-0.330) | PSNR 15.58 dB | MAE 0.1428
 CycleGAN without test patients: SSIM 0.2575 (median 0.2311, 95% range 0.217-0.297) | PSNR 14.07 dB | MAE 0.1684
 Pix2Pix without test patients: SSIM 0.3244 (median 0.3053, 95% range 0.273-0.375) | PSNR 17.40 dB | MAE 0.1127
 
 mean SSIM by disease:
-   Atrophy (6 pairs): grey copy of the CF photo: 0.240 | average training FAF: 0.412 | Old CycleGAN: 0.298 | CycleGAN without test patients: 0.268 | Pix2Pix without test patients: 0.367
-   CNVM (10 pairs): grey copy of the CF photo: 0.275 | average training FAF: 0.431 | Old CycleGAN: 0.332 | CycleGAN without test patients: 0.293 | Pix2Pix without test patients: 0.352
-   CSR (5 pairs): grey copy of the CF photo: 0.251 | average training FAF: 0.409 | Old CycleGAN: 0.304 | CycleGAN without test patients: 0.277 | Pix2Pix without test patients: 0.352
-   Choroiditis (6 pairs): grey copy of the CF photo: 0.262 | average training FAF: 0.394 | Old CycleGAN: 0.304 | CycleGAN without test patients: 0.272 | Pix2Pix without test patients: 0.364
-   Normal (2 pairs): grey copy of the CF photo: 0.268 | average training FAF: 0.330 | Old CycleGAN: 0.262 | CycleGAN without test patients: 0.348 | Pix2Pix without test patients: 0.296
-   Scar (4 pairs): grey copy of the CF photo: 0.212 | average training FAF: 0.339 | Old CycleGAN: 0.237 | CycleGAN without test patients: 0.217 | Pix2Pix without test patients: 0.292
-   Stargardt (6 pairs): grey copy of the CF photo: 0.141 | average training FAF: 0.217 | Old CycleGAN: 0.152 | CycleGAN without test patients: 0.154 | Pix2Pix without test patients: 0.203
-
-Old CycleGAN (saw every patient) on all 259 master pairs (not a test, it trained on these photos): SSIM mean 0.2585, median 0.2503, best single pair 0.6076 (CF_RE_CNVM_19.jpg), 57.9% of pairs above 0.2333
+   Atrophy (6 pairs): grey copy of the CF photo: 0.240 | average training FAF: 0.412 | CycleGAN without test patients: 0.268 | Pix2Pix without test patients: 0.367
+   CNVM (10 pairs): grey copy of the CF photo: 0.275 | average training FAF: 0.431 | CycleGAN without test patients: 0.293 | Pix2Pix without test patients: 0.352
+   CSR (5 pairs): grey copy of the CF photo: 0.251 | average training FAF: 0.409 | CycleGAN without test patients: 0.277 | Pix2Pix without test patients: 0.352
+   Choroiditis (6 pairs): grey copy of the CF photo: 0.262 | average training FAF: 0.394 | CycleGAN without test patients: 0.272 | Pix2Pix without test patients: 0.364
+   Normal (2 pairs): grey copy of the CF photo: 0.268 | average training FAF: 0.330 | CycleGAN without test patients: 0.348 | Pix2Pix without test patients: 0.296
+   Scar (4 pairs): grey copy of the CF photo: 0.212 | average training FAF: 0.339 | CycleGAN without test patients: 0.217 | Pix2Pix without test patients: 0.292
+   Stargardt (6 pairs): grey copy of the CF photo: 0.141 | average training FAF: 0.217 | CycleGAN without test patients: 0.154 | Pix2Pix without test patients: 0.203

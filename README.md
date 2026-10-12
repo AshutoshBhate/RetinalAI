@@ -138,15 +138,14 @@ Run the scripts in `evaluation/` in order:
 | Script | What it does |
 | ------ | ------------ |
 | `Step1_Patient_Split.py` | Groups photos by patient and writes the split lists |
-| `Step2_Old_Classifier_CV.py` | Scores the original classifier recipe with patient-grouped cross-validation |
-| `Step3_Train_CycleGAN_TrainOnly.py` | Trains the CycleGAN without the test patients |
-| `Step4_Train_Pix2Pix_TrainOnly.py` | Trains Pix2Pix without the test patients |
-| `Step5_Score_GANs.py` | Scores both GANs and the baselines on the 39 test pairs |
-| `Step6_Generate_FAF_TrainOnly.py` | Makes synthetic FAFs for the 62 classifier photos |
-| `Step7_Classifier_TrainOnly.py` | Trains and tests the classifier |
-| `Step8_Figures.py` | Draws the figures above |
+| `Step2_Train_CycleGAN.py` | Trains the CycleGAN without the test patients |
+| `Step3_Train_Pix2Pix.py` | Trains Pix2Pix without the test patients |
+| `Step4_Score_GANs.py` | Scores both GANs and the baselines on the 39 test pairs |
+| `Step5_Generate_FAF.py` | Makes synthetic FAFs for the 62 classifier photos |
+| `Step6_Train_Classifier.py` | Trains and tests the classifier |
+| `Step7_Figures.py` | Draws the figures above |
 
-The scripts also need `scikit-learn`, `scikit-image` and `matplotlib`, and Step 4 needs `albumentations` (`pip install scikit-learn scikit-image matplotlib albumentations`). Step 1 also needs the patient lists made from the original hospital files, which are not included. The outputs of my runs are in `evaluation/Results/`.
+The scripts also need `scikit-learn`, `scikit-image` and `matplotlib`, and Step 3 needs `albumentations` (`pip install scikit-learn scikit-image matplotlib albumentations`). Step 1 also needs the patient lists made from the original hospital files, which are not included. The outputs of my runs are in `evaluation/Results/`.
 
 ### Run the demo
 
@@ -168,16 +167,11 @@ RetinalAI/
 │   └── Whole_Pipeline.py           Streamlit demo: CF → FAF → class → Grad-CAM
 ├── evaluation/
 │   ├── Networks.py                 Generator and discriminators
-│   ├── Step1 ... Step8             The scripts listed above
+│   ├── Step1 ... Step7             The scripts listed above
 │   └── Results/                    Scores, training logs and figures from my runs
 ├── Dataset/Splits/                 Patient split lists
-├── notebooks/
-│   ├── cyclegan/                   CycleGAN training, translation and metrics notebooks
-│   └── resnet/                     ResNet-18 training and evaluation notebooks
 └── images/                         Figures for this README
 ```
-
-The notebooks are the project's exploration notebooks (CycleGAN training on Kaggle, translation, metrics and ResNet training). The results above come from the scripts in `evaluation/`.
 
 ---
 

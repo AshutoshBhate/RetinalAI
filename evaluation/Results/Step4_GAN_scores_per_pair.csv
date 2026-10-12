@@ -77,379 +77,81 @@ Baseline: average training FAF,Actual_Original_Master/Stargardt/CF_LE_Stargardt_
 Baseline: average training FAF,Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.0590573251247406,12.514627412133652,0.19401304423809052
 Baseline: average training FAF,Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.29676833748817444,18.561715078109223,0.09383723884820938
 Baseline: average training FAF,Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.2960144877433777,18.649360668836938,0.08091066777706146
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.24993105232715607,15.71452074751515,0.12561659514904022
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.24083484709262848,14.411971661355345,0.16201810538768768
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.45758041739463806,22.016876576231134,0.06334185600280762
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.24378247559070587,15.530449520477745,0.13019347190856934
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.22425459325313568,15.710189025933632,0.13173212110996246
-Old CycleGAN (saw every patient),Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.3734714984893799,18.398117861074006,0.1038236990571022
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.23950175940990448,15.369323762215199,0.14126287400722504
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.4565449059009552,17.41625683399182,0.09878190606832504
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.5663524270057678,23.922634805934763,0.049546558409929276
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.14031191170215607,10.772264430444547,0.22935236990451813
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.18791942298412323,12.815999710005494,0.18110255897045135
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.32332557439804077,12.662938090211142,0.2001105099916458
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.29390963912010193,15.664872189730783,0.12465482950210571
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.6075629591941833,24.0380474560705,0.05001192167401314
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.13280700147151947,11.267928116786068,0.22026777267456055
-Old CycleGAN (saw every patient),Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.37532123923301697,15.102311671026957,0.13450418412685394
-Old CycleGAN (saw every patient),Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.31743231415748596,16.432415419216863,0.12373480200767517
-Old CycleGAN (saw every patient),Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.2333507537841797,14.828227759035023,0.1519443392753601
-Old CycleGAN (saw every patient),Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.4079756438732147,16.47071334021207,0.11389970779418945
-Old CycleGAN (saw every patient),Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.36892780661582947,17.19374555562301,0.10798988491296768
-Old CycleGAN (saw every patient),Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.1904103010892868,16.181974458082045,0.11626463383436203
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.4155132472515106,19.24178855854374,0.08758888393640518
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.22215326130390167,12.00008053390629,0.214741051197052
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.19776014983654022,13.26002613293143,0.18052427470684052
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.22175149619579315,17.21470313109937,0.10867474228143692
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.4194072186946869,16.352484037575927,0.12607735395431519
-Old CycleGAN (saw every patient),Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.34824323654174805,17.63407012931135,0.10167926549911499
-Old CycleGAN (saw every patient),Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.3159463107585907,17.048589362100138,0.12116322666406631
-Old CycleGAN (saw every patient),Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.20867277681827545,12.821691243836359,0.20077355206012726
-Old CycleGAN (saw every patient),Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.31422603130340576,17.45738732493908,0.10230521112680435
-Old CycleGAN (saw every patient),Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.15839262306690216,12.621149197936239,0.18284177780151367
-Old CycleGAN (saw every patient),Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.3379855155944824,17.48547164580325,0.11380696296691895
-Old CycleGAN (saw every patient),Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.13748840987682343,11.957735298140546,0.20069389045238495
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.04401182010769844,11.929293970985462,0.2043512612581253
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.20306400954723358,15.137570479412606,0.15231679379940033
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.2164546698331833,14.625932449435945,0.13484333455562592
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.04366135969758034,10.494122530780805,0.2403484433889389
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.21367943286895752,13.882318292203813,0.17946159839630127
-Old CycleGAN (saw every patient),Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.19363529980182648,14.482017703001585,0.15590818226337433
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.2112695425748825,12.234650858018501,0.2031095027923584
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.2368430346250534,16.029172044044977,0.11387544870376587
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.42445993423461914,14.405005870956044,0.17849379777908325
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.1984889954328537,11.669146496050757,0.2174747735261917
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.20747226476669312,14.08305988654435,0.15149469673633575
-CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.32764720916748047,16.46677593309837,0.12953166663646698
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.24866950511932373,15.256542008015595,0.13267146050930023
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.3484298884868622,11.9554109294768,0.22618581354618073
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.4309506416320801,13.559987058768929,0.19335384666919708
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.13601873815059662,8.698260797750773,0.30750250816345215
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.22641928493976593,13.7743944833794,0.16608209908008575
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.3738555908203125,10.694714843144846,0.2705431878566742
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.2222021073102951,11.019657708985612,0.24550719559192657
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.4397745132446289,14.489514427188794,0.17719675600528717
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.1316116601228714,9.332876859119656,0.28550851345062256
-CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.37569546699523926,15.656900823474636,0.1320193111896515
-CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.266500324010849,12.545732680601493,0.19922102987766266
-CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.21116219460964203,15.165045734566506,0.1296747475862503
-CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.4079159200191498,14.678021544244306,0.15411515533924103
-CycleGAN without test patients,Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.33192339539527893,13.681527201425808,0.16848821938037872
-CycleGAN without test patients,Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.16860485076904297,14.051043352638011,0.16726498305797577
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.38885048031806946,14.083939638062798,0.16703957319259644
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.20487229526042938,15.273378577630458,0.1363995522260666
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.1921515017747879,13.861179660890988,0.16044606268405914
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.2065999060869217,15.357653269779162,0.1412508636713028
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.33075496554374695,16.241637876982033,0.12619979679584503
-CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.3063965141773224,15.34442453776774,0.14433901011943817
-CycleGAN without test patients,Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.347721666097641,16.467857057339653,0.12171449512243271
-CycleGAN without test patients,Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.3490423262119293,18.170335622741447,0.09191527217626572
-CycleGAN without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.2786392867565155,14.664386549589521,0.1513717919588089
-CycleGAN without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.14069987833499908,13.240263617112259,0.1664033681154251
-CycleGAN without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.3239997327327728,14.39656335587863,0.1480530947446823
-CycleGAN without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.12623988091945648,13.061926554124526,0.17386917769908905
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.03950732201337814,11.62699160405236,0.21626286208629608
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.22108988463878632,16.55784260895274,0.10863342136144638
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.18137627840042114,15.099084492840582,0.14160192012786865
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.0449204184114933,11.612551580677962,0.21397198736667633
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.2311314344406128,17.23439185891149,0.0988553836941719
-CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.20437856018543243,16.947138226219565,0.108773373067379
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.32196542620658875,18.957620713143083,0.08611363917589188
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.27756455540657043,17.108361365832646,0.11008992791175842
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.5524463653564453,21.858154412805334,0.06636887788772583
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.3194693326950073,18.907988871380194,0.09085974842309952
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.2690351903438568,18.480866394324654,0.09578907489776611
-Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.4644477069377899,21.433266581444684,0.0614963173866272
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.3051622807979584,16.827581564965925,0.11880665272474289
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.4961376488208771,18.540832311857024,0.10055145621299744
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.5966085195541382,20.94010079854401,0.07490161806344986
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.24211914837360382,16.283808032075772,0.12482845783233643
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.16735021770000458,12.574899093520191,0.18177247047424316
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.3052854835987091,15.98714821957162,0.1356372833251953
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.30706509947776794,15.897329909004599,0.13226251304149628
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.5433127284049988,20.830233736031765,0.07063639163970947
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.210316464304924,15.806730750358273,0.12774477899074554
-Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.35122084617614746,15.981810191433883,0.12535671889781952
-Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.430722713470459,20.068171413759536,0.08104444295167923
-Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.2985190451145172,17.715263162919896,0.10485037416219711
-Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.35652753710746765,17.451724682325608,0.10495533794164658
-Pix2Pix without test patients,Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.40663039684295654,18.721501655326914,0.0923551693558693
-Pix2Pix without test patients,Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.2673802077770233,17.065957951626775,0.10229036957025528
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.5052192807197571,22.200881228048264,0.06289426237344742
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.2673465609550476,13.869412927089389,0.16654455661773682
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.2439122200012207,14.479927868706701,0.15951253473758698
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.3279825747013092,21.37815910027684,0.0619465596973896
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.44595015048980713,16.579356737977932,0.10949576646089554
-Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.3915588855743408,18.53864376882597,0.0899040475487709
-Pix2Pix without test patients,Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.3564019203186035,19.42934822391842,0.08371024578809738
-Pix2Pix without test patients,Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.23552004992961884,13.982975766245056,0.1749860793352127
-Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.37744084000587463,17.909545681347122,0.0971265435218811
-Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.18588440120220184,13.830160637939207,0.16311784088611603
-Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.43556836247444153,18.854520172946707,0.08720777183771133
-Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.16931088268756866,13.892843901971785,0.1628543734550476
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.05075005814433098,11.407455396590366,0.21642206609249115
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.29013773798942566,19.360510076373018,0.082493357360363
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.268131822347641,17.138349471202574,0.09882494062185287
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.058967333287000656,12.418890667090722,0.19433049857616425
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.27869221568107605,17.39163625486196,0.11092916876077652
-Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.27312424778938293,18.444712656667786,0.08589375019073486
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_1.jpg,AMD,,0.1575137823820114,13.925202512822745,0.16526900231838226
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_2.jpg,AMD,,0.26109492778778076,17.944025473825075,0.10585423558950424
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_3.jpg,AMD,,0.12345198541879654,12.840417277569285,0.18077979981899261
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_4.jpg,AMD,,0.16294331848621368,16.91555222357114,0.1176493763923645
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_5.jpg,AMD,,0.3112448453903198,15.53080558352157,0.13972753286361694
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_LE_AMD_6.jpg,AMD,,0.20633208751678467,15.582153429925443,0.1314522922039032
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_1.jpg,AMD,,0.37426674365997314,17.765482215837046,0.11078876256942749
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_2.jpg,AMD,,0.26077374815940857,15.280697262489584,0.13961881399154663
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_3.jpg,AMD,,0.1538935750722885,15.061499254469657,0.13553296029567719
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_4.jpg,AMD,,0.14303700625896454,13.806699549092084,0.1705794483423233
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_5.jpg,AMD,,0.32934197783470154,18.91249762731294,0.09794355183839798
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/AMD/CF_RE_AMD_6.jpg,AMD,,0.15342704951763153,15.027567232818779,0.14117367565631866
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_1.jpg,Atrophy,A11,0.3315202593803406,14.153777624401947,0.1700892299413681
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_10.jpg,Atrophy,A09,0.35049164295196533,17.074550312783504,0.11429351568222046
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_11.jpg,Atrophy,A13,0.25140759348869324,17.01229992564796,0.11191663891077042
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_12.jpg,Atrophy,A04,0.2102690488100052,14.861765177071158,0.1426980048418045
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_14.jpg,Atrophy,A14,0.1665252298116684,12.303044236984263,0.18783076107501984
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_16.jpg,Atrophy,A12,0.33512476086616516,15.119898221556046,0.146933451294899
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_2.jpg,Atrophy,A05,0.20937933027744293,14.415077260428141,0.16488106548786163
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_3.jpg,Atrophy,A07,0.14611943066120148,14.826514631022832,0.14122027158737183
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.24993105232715607,15.714521260163023,0.12561659514904022
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.24083484709262848,14.411971637595771,0.1620180904865265
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_6.jpg,Atrophy,A08,0.1903180480003357,15.928866115850205,0.1285247951745987
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_7.jpg,Atrophy,A06,0.2307380884885788,14.354607492794946,0.13212288916110992
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_8.jpg,Atrophy,A02,0.2416921854019165,17.83796096837873,0.10430928319692612
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.45758041739463806,22.016876322781677,0.06334185600280762
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_1.jpg,Atrophy,A11,0.31136152148246765,19.165581439178887,0.09000179916620255
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_10.jpg,Atrophy,A09,0.5089741349220276,19.42486429165353,0.07721281796693802
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_11.jpg,Atrophy,A13,0.28700363636016846,14.94978110652984,0.1416151374578476
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_12.jpg,Atrophy,A04,0.2430887222290039,17.335147417824416,0.10865539312362671
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_2.jpg,Atrophy,A05,0.33255091309547424,15.305007481431684,0.14420653879642487
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_3.jpg,Atrophy,A07,0.16631442308425903,14.897923235022311,0.13866056501865387
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.24378247559070587,15.530449521536882,0.13019347190856934
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.22425460815429688,15.710189032029865,0.13173212110996246
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_6.jpg,Atrophy,A08,0.3002341091632843,15.512903302829349,0.13254223763942719
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_7.jpg,Atrophy,A06,0.21928776800632477,14.171204548680844,0.1379978060722351
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_8.jpg,Atrophy,A02,0.25787854194641113,17.299710816837468,0.10989832878112793
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.37347152829170227,18.39811774647314,0.1038236990571022
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/BRVO/CF_LE_BRVO_1.jpg,BRVO,,0.27419736981391907,19.073178410787815,0.08381276577711105
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/BRVO/CF_RE_BRVO_1.jpg,BRVO,,0.28561532497406006,16.421893086551233,0.12299621850252151
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_1.jpg,CNVM,V23,0.3054427206516266,12.197682956659122,0.1974858045578003
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_10.jpg,CNVM,V06,0.30384111404418945,14.835263964465234,0.14277960360050201
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_11.jpg,CNVM,V20,0.3375495374202728,15.550354663622361,0.1168791651725769
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_12.jpg,CNVM,V21,0.401956170797348,16.387132513207693,0.11516743898391724
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_13.jpg,CNVM,V05,0.287699431180954,11.928750534300379,0.20685340464115143
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_14.jpg,CNVM,V01,0.2629258334636688,11.686683724145968,0.20267526805400848
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_15.jpg,CNVM,V24,0.23569685220718384,11.740639720155004,0.21496336162090302
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.23950177431106567,15.369322788517083,0.14126288890838623
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.4565449059009552,17.41625680963475,0.09878190606832504
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_18.jpg,CNVM,V03,0.25498831272125244,15.981848394916076,0.12039922922849655
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.5663521885871887,23.922629226113212,0.04954659938812256
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.14031191170215607,10.772264677705216,0.22935235500335693
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_23.jpg,CNVM,V19,0.29957008361816406,18.820105025736584,0.09279179573059082
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_24.jpg,CNVM,V12,0.2404448539018631,13.724559752983716,0.16627822816371918
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_25.jpg,CNVM,V15,0.19128219783306122,15.524321860682843,0.1349569708108902
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_28.jpg,CNVM,V14,0.17440831661224365,13.866982492479396,0.15413986146450043
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_3.jpg,CNVM,V09,0.27282294631004333,17.240684807702795,0.10885853320360184
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_4.jpg,CNVM,V07,0.21381868422031403,17.915329263974098,0.09955015033483505
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_5.jpg,CNVM,V18,0.3365735709667206,12.343534064717218,0.18936026096343994
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.18791942298412323,12.815999717046445,0.18110255897045135
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_8.jpg,CNVM,V04,0.2649611532688141,15.968443572753849,0.12789791822433472
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_LE_CNVM_9.jpg,CNVM,V16,0.30267176032066345,19.64777559702762,0.08310966193675995
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_1.jpg,CNVM,V23,0.1988624781370163,9.549976328014784,0.28158295154571533
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_10.jpg,CNVM,V06,0.22544579207897186,14.722815493386864,0.14575430750846863
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_11.jpg,CNVM,V20,0.17597322165966034,9.60122511437245,0.25116869807243347
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_12.jpg,CNVM,V21,0.2560791075229645,15.227302833210194,0.14081427454948425
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_13.jpg,CNVM,V05,0.22706486284732819,13.934848727214872,0.15667328238487244
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_14.jpg,CNVM,V01,0.26251447200775146,17.488053364370302,0.10530570149421692
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_15.jpg,CNVM,V24,0.323137491941452,16.83678883224398,0.1264701634645462
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.3233255445957184,12.662938654468741,0.2001105099916458
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.29390963912010193,15.664872324077708,0.12465482950210571
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_18.jpg,CNVM,V03,0.1603519469499588,15.467219824879708,0.1328209489583969
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.6075629591941833,24.038047485287898,0.05001192167401314
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.13280700147151947,11.267928267463937,0.22026775777339935
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_24.jpg,CNVM,V12,0.20758549869060516,13.774577143886077,0.17247430980205536
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_25.jpg,CNVM,V15,0.16107963025569916,14.524602567445777,0.14794175326824188
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_26.jpg,CNVM,V10,0.4745887517929077,18.343660030083477,0.09224653989076614
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_3.jpg,CNVM,V09,0.48304376006126404,16.45797300977048,0.12586241960525513
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_4.jpg,CNVM,V07,0.1854591965675354,13.51890444484756,0.18210028111934662
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_5.jpg,CNVM,V18,0.36651411652565,14.333412931379385,0.15508952736854553
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_6.jpg,CNVM,V14,0.22193725407123566,14.162557979330725,0.1480129063129425
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.37532123923301697,15.10231165232376,0.13450419902801514
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_8.jpg,CNVM,V04,0.2486875057220459,15.544595097774385,0.14469879865646362
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CNVM/CF_RE_CNVM_9.jpg,CNVM,V16,0.2562069594860077,15.606761607909803,0.14405813813209534
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_10.jpg,CSR,R21,0.156238853931427,9.116969041620072,0.2689122259616852
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_11.jpg,CSR,R06,0.1830979734659195,13.88044025192473,0.1512891948223114
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_12.jpg,CSR,R18,0.15139968693256378,13.02776494260345,0.18775422871112823
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_13.jpg,CSR,R11,0.32446154952049255,16.770089550871546,0.10981885343790054
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_14.jpg,CSR,R12,0.395877867937088,19.236628162653346,0.08281254768371582
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_15.jpg,CSR,R14,0.22257475554943085,12.109340721455268,0.2036452293395996
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_16.jpg,CSR,R08,0.2214958816766739,17.927917254622113,0.10031431913375854
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.31743231415748596,16.432415370983108,0.12373480200767517
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_18.jpg,CSR,R17,0.4102487564086914,17.315491330187275,0.10421782732009888
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_2.jpg,CSR,R10,0.1843881756067276,12.300520549667674,0.19020976126194
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.2333507537841797,14.82822745785736,0.1519443541765213
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_23.jpg,CSR,R09,0.31195691227912903,17.20756314973616,0.1005643978714943
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_24.jpg,CSR,R09,0.31195688247680664,17.207563234522624,0.1005643978714943
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_25.jpg,CSR,R13,0.2215919941663742,16.681648190153652,0.11613723635673523
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_3.jpg,CSR,R05,0.19905871152877808,16.584604031483853,0.11203489452600479
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_4.jpg,CSR,R07,0.26915332674980164,16.443809399898225,0.12402553111314774
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.4079756736755371,16.470713511856534,0.11389970779418945
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_6.jpg,CSR,R02,0.24204210937023163,16.734302850988133,0.11267486959695816
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_8.jpg,CSR,R01,0.2033073902130127,14.967369555538871,0.14438503980636597
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_LE_CSR_9.jpg,CSR,R04,0.12854614853858948,14.699917927779492,0.14915792644023895
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_10.jpg,CSR,R21,0.19939613342285156,12.066099992770354,0.20275597274303436
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_11.jpg,CSR,R06,0.1931591033935547,15.976767355394925,0.11935362964868546
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_12.jpg,CSR,R18,0.31294000148773193,14.705071509924664,0.14249172806739807
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_13.jpg,CSR,R11,0.18090327084064484,16.224464124611707,0.12406996637582779
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_14.jpg,CSR,R12,0.34868741035461426,17.49905465600721,0.0929027870297432
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_15.jpg,CSR,R14,0.3392166197299957,10.90819420778261,0.2241402417421341
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_16.jpg,CSR,R08,0.3216945230960846,20.19756424922287,0.07397165149450302
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.36892780661582947,17.193745577545318,0.10798988491296768
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_18.jpg,CSR,R17,0.43068477511405945,19.06106835865125,0.08818867802619934
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_2.jpg,CSR,R10,0.16644233465194702,13.343643947134638,0.17260640859603882
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_4.jpg,CSR,R07,0.389699786901474,19.13675677544772,0.09186788648366928
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.1904103308916092,16.18197492475303,0.11626461893320084
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_6.jpg,CSR,R02,0.2900318205356598,19.873760626543376,0.080905981361866
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_8.jpg,CSR,R01,0.21640890836715698,17.52303359239525,0.10309473425149918
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/CSR/CF_RE_CSR_9.jpg,CSR,R04,0.18632598221302032,16.8292619657762,0.10992196947336197
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroidal Folds/CF_LE_Choroidal_Folds_1.jpg,Choroidal Folds,,0.17768891155719757,16.571468788588394,0.11643165349960327
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroidal Folds/CF_LE_Choroidal_Folds_2.jpg,Choroidal Folds,,0.355070024728775,18.40262492012356,0.09415795654058456
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroidal Folds/CF_RE_Choroidal_Folds_1.jpg,Choroidal Folds,,0.21965660154819489,16.60991899521092,0.11589685082435608
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroidal Folds/CF_RE_Choroidal_Folds_2.jpg,Choroidal Folds,,0.23701433837413788,20.0571121161558,0.07735851407051086
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_13.jpg,Choroiditis,C01,0.2785924971103668,16.943669713519448,0.11697379499673843
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.4155132472515106,19.241788489446368,0.08758889883756638
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_15.jpg,Choroiditis,C02,0.2576181888580322,16.01504131252867,0.1313837170600891
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_16.jpg,Choroiditis,C11,0.3207225501537323,15.534507524372449,0.1208219826221466
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.22215326130390167,12.000080520794885,0.214741051197052
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_18.jpg,Choroiditis,C05,0.309546560049057,19.49684556995338,0.08276870101690292
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_19.jpg,Choroiditis,C05,0.309546560049057,19.49684558578685,0.08276870101690292
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_2.jpg,Choroiditis,C15,0.26169368624687195,16.015518059591248,0.12254538387060165
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_22.jpg,Choroiditis,C09,0.17126458883285522,14.25369924270673,0.15199528634548187
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_3.jpg,Choroiditis,C04,0.34118548035621643,18.633625801457562,0.09704824537038803
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.19776016473770142,13.260026130338096,0.18052427470684052
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_6.jpg,Choroiditis,C07,0.21671263873577118,14.848903181515634,0.13984312117099762
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_8.jpg,Choroiditis,C13,0.30211663246154785,16.4314864858097,0.11831003427505493
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_9.jpg,Choroiditis,C10,0.23966877162456512,14.765776070964867,0.1351195126771927
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_13.jpg,Choroiditis,C01,0.2503352463245392,14.374459414058272,0.16778512299060822
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.22175146639347076,17.214703224571522,0.10867474228143692
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_15.jpg,Choroiditis,C02,0.21962885558605194,17.90597005782284,0.0971241295337677
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_16.jpg,Choroiditis,C11,0.23839475214481354,14.09025169218859,0.14993049204349518
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.4194072186946869,16.352483893779052,0.12607736885547638
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_19.jpg,Choroiditis,C05,0.3314501643180847,17.76180712494007,0.10367002338171005
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_2.jpg,Choroiditis,C15,0.204009547829628,14.70341751987943,0.14594490826129913
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_3.jpg,Choroiditis,C04,0.26295074820518494,15.298644983043104,0.14504919946193695
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.34824323654174805,17.634070131306515,0.10167926549911499
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_6.jpg,Choroiditis,C07,0.15551914274692535,13.058396021393863,0.16970600187778473
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_7.jpg,Choroiditis,C13,0.3237534463405609,15.098897585456099,0.13459639251232147
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_8.jpg,Choroiditis,C13,0.3237534463405609,15.098897573085173,0.13459639251232147
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_9.jpg,Choroiditis,C10,0.31544986367225647,16.86796104436014,0.11733446270227432
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_LE_Drusen_1.jpg,DRUSEN,,0.22277617454528809,12.885384644799,0.20081324875354767
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_LE_Drusen_3.jpg,DRUSEN,,0.254459947347641,15.14057389239251,0.15415585041046143
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_LE_Drusen_4.jpg,DRUSEN,,0.35511985421180725,16.769216733774357,0.11926785856485367
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_LE_Drusen_5.jpg,DRUSEN,,0.37521764636039734,15.335718934813947,0.1453752964735031
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_LE_Drusen_6.jpg,DRUSEN,,0.5062150359153748,20.099307762857848,0.07788846641778946
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_RE_Drusen_1.jpg,DRUSEN,,0.2888515889644623,17.22313145723341,0.11763080209493637
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_RE_Drusen_3.jpg,DRUSEN,,0.1610691100358963,12.304623630192562,0.22015352547168732
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_RE_Drusen_4.jpg,DRUSEN,,0.20854763686656952,15.75623251392585,0.14058218896389008
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_RE_Drusen_5.jpg,DRUSEN,,0.3725798428058624,17.8659639866965,0.10478806495666504
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/DRUSEN/CF_RE_Drusen_6.jpg,DRUSEN,,0.42534467577934265,21.47438369032326,0.0682467445731163
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_LE_ERM_1.jpg,ERM,,0.31453487277030945,17.414213817480835,0.10833331197500229
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_LE_ERM_2.jpg,ERM,,0.38519689440727234,17.22176598066335,0.11419215053319931
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_LE_ERM_3.jpg,ERM,,0.277254194021225,18.33326097777489,0.09541609138250351
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_LE_ERM_4.jpg,ERM,,0.21763037145137787,16.34634633114632,0.1224370077252388
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_RE_ERM_1.jpg,ERM,,0.2821211516857147,15.577364617448135,0.1325969099998474
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_RE_ERM_2.jpg,ERM,,0.29606232047080994,14.563629782282781,0.1633273810148239
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_RE_ERM_3.jpg,ERM,,0.4109220802783966,18.03924119164684,0.10454243421554565
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/ERM/CF_RE_ERM_4.jpg,ERM,,0.2402593344449997,16.144505595789266,0.1296830028295517
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/FTMH/CF_LE_FTMH_1.jpg,FTMH,,0.35852792859077454,19.73380261820225,0.0800795629620552
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/FTMH/CF_RE_FTMH_1.jpg,FTMH,,0.5249853730201721,18.55136901828573,0.08550950139760971
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Macular Star/CF_LE_Macular_Star_2.jpg,Macular Star,,0.25635620951652527,15.876811744029219,0.11784074455499649
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Macular Star/CF_RE_Macular_Star_1.jpg,Macular Star,,0.38652896881103516,18.83685576685513,0.09267139434814453
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Macular Star/CF_RE_Macular_Star_2.jpg,Macular Star,,0.2043088674545288,15.645106726971687,0.13080047070980072
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_1.jpg,Normal,N03,0.27131161093711853,17.753634471396033,0.10171534866094589
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_2.jpg,Normal,N04,0.325453519821167,19.293397853039963,0.0814640000462532
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.3159463107585907,17.04858937855121,0.12116322666406631
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_4.jpg,Normal,N01,0.33243730664253235,16.879316459218902,0.1114087924361229
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_5.jpg,Normal,BN1,0.17239397764205933,13.216859040332327,0.18171732127666473
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_LE_Normal_6.jpg,Normal,BN2,0.2491941601037979,17.033930457885184,0.11026012897491455
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_1.jpg,Normal,N03,0.24673229455947876,16.503490026608443,0.11691867560148239
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_2.jpg,Normal,N04,0.30678093433380127,17.44382683043205,0.11187693476676941
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.20867280662059784,12.821691486346705,0.20077358186244965
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_4.jpg,Normal,N01,0.39593639969825745,17.47788862373802,0.09630223363637924
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_5.jpg,Normal,BN1,0.25104236602783203,16.502490356292235,0.11998932808637619
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Normal/CF_RE_Normal_6.jpg,Normal,BN2,0.19191937148571014,13.964223231293666,0.16087853908538818
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_LE_PED_1.jpg,PED,,0.20394586026668549,15.036670110384593,0.13483047485351562
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_LE_PED_2.jpg,PED,,0.26793357729911804,17.129112303175404,0.1111324205994606
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_LE_PED_3.jpg,PED,,0.176779106259346,17.093868658586256,0.10353239625692368
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_LE_PED_6.jpg,PED,,0.2300092726945877,17.63300442138296,0.10156937688589096
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_LE_PED_7.jpg,PED,,0.33150213956832886,17.016274429610327,0.10892369598150253
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_RE_PED_1.jpg,PED,,0.25414034724235535,15.747948113093859,0.12752988934516907
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_RE_PED_2.jpg,PED,,0.24410946667194366,15.953289895171938,0.129715234041214
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/PED/CF_RE_PED_3.jpg,PED,,0.33588847517967224,19.77958188456252,0.08036661893129349
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_LE_RP_1.jpg,Retinitis_Pigmentosa,,0.2658524513244629,13.533905488547433,0.18076352775096893
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_LE_RP_2.jpg,Retinitis_Pigmentosa,,0.5264420509338379,20.325143667747056,0.07198143750429153
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_LE_RP_3.jpg,Retinitis_Pigmentosa,,0.20319020748138428,12.154819246640516,0.18998877704143524
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_LE_RP_4.jpg,Retinitis_Pigmentosa,,0.33801308274269104,15.360859782173222,0.12227942794561386
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_LE_RP_5.jpg,Retinitis_Pigmentosa,,0.03434872254729271,8.676484991108762,0.31023573875427246
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_RE_RP_1.jpg,Retinitis_Pigmentosa,,0.24741798639297485,13.713658995906338,0.1773192286491394
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_RE_RP_2.jpg,Retinitis_Pigmentosa,,0.4128599166870117,16.251986533981675,0.12243986129760742
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_RE_RP_3.jpg,Retinitis_Pigmentosa,,0.2674284875392914,12.99138071694543,0.17856399714946747
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_RE_RP_4.jpg,Retinitis_Pigmentosa,,0.20930226147174835,15.26155360994573,0.13537657260894775
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Retinitis_Pigmentosa/CF_RE_RP_5.jpg,Retinitis_Pigmentosa,,0.044797733426094055,9.77189414042187,0.2681390047073364
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.31422603130340576,17.457387322121203,0.10230521112680435
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_10.jpg,Scar,S06,0.23322458565235138,16.248931039077647,0.12415560334920883
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_11.jpg,Scar,S04,0.252042293548584,17.76554118858797,0.10415598750114441
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_12.jpg,Scar,S08,0.47576430439949036,20.94754690885274,0.0694776251912117
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_2.jpg,Scar,S11,0.3208160698413849,11.390749482970858,0.24141192436218262
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_3.jpg,Scar,S02,0.2591031789779663,17.330827306000316,0.10123968869447708
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_4.jpg,Scar,S09,0.16368617117404938,11.189040360687459,0.21907423436641693
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.15839260816574097,12.621149253464969,0.18284177780151367
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_6.jpg,Scar,S10,0.08495211601257324,13.214813985600223,0.17140944302082062
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_7.jpg,Scar,S03,0.295359343290329,18.008075605466082,0.09693946689367294
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_LE_Scar_8.jpg,Scar,S05,0.3153991401195526,12.82652923786573,0.1755191832780838
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.3379855155944824,17.485471646482395,0.11380696296691895
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_10.jpg,Scar,S06,0.28856098651885986,17.944395369240155,0.10360341519117355
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_11.jpg,Scar,S04,0.2865578234195709,17.900792592269795,0.10671743005514145
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_12.jpg,Scar,S08,0.20016825199127197,15.381561187352643,0.1273919939994812
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_2.jpg,Scar,S11,0.19135449826717377,15.574049831164203,0.13123707473278046
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_3.jpg,Scar,S02,0.1809849739074707,15.782563119696842,0.1272697001695633
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_4.jpg,Scar,S09,0.10699876397848129,8.973091013514141,0.286408394575119
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.13748840987682343,11.95773534993506,0.20069386065006256
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_6.jpg,Scar,S10,0.08297624439001083,11.742782866558754,0.1992332488298416
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_7.jpg,Scar,S03,0.20623500645160675,11.09801641835517,0.21722082793712616
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/SCAR/CF_RE_Scar_8.jpg,Scar,S05,0.33868858218193054,13.995792353469154,0.15524326264858246
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_1.jpg,Stargardt,G06,0.09340617805719376,13.301102342224125,0.17504416406154633
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_10.jpg,Stargardt,G01,0.06371626257896423,12.44534991505663,0.1925462931394577
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_12.jpg,Stargardt,G05,0.3175152838230133,14.085023269478235,0.141309455037117
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.04401180148124695,11.929292073703412,0.2043512910604477
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_14.jpg,Stargardt,G12,0.10442256927490234,12.444243993967541,0.18008531630039215
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_15.jpg,Stargardt,G13,0.14794784784317017,12.307635067464442,0.19328701496124268
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_2.jpg,Stargardt,G12,0.10442256927490234,12.444243705375044,0.18008534610271454
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_3.jpg,Stargardt,G04,0.2508622407913208,15.436882115889661,0.13137568533420563
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_4.jpg,Stargardt,G07,0.2851204574108124,16.23464071968315,0.11419335752725601
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_5.jpg,Stargardt,G11,0.2709009349346161,12.232702201593536,0.18636631965637207
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_6.jpg,Stargardt,G10,0.08010827004909515,10.368231608708708,0.24192185699939728
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.2030639797449112,15.13757049032769,0.15231679379940033
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_8.jpg,Stargardt,G03,0.13994406163692474,12.792560804552966,0.18624798953533173
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.2164546698331833,14.625932566714479,0.13484333455562592
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_1.jpg,Stargardt,G06,0.04092859849333763,12.428540143066398,0.1952575445175171
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_10.jpg,Stargardt,G01,0.10573854297399521,12.891320648210595,0.18461443483829498
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_12.jpg,Stargardt,G05,0.25325727462768555,15.279081176987887,0.1325904279947281
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.04366135597229004,10.494122840462419,0.24034841358661652
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_14.jpg,Stargardt,G12,0.08932638168334961,10.994553898046286,0.2200360745191574
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_15.jpg,Stargardt,G13,0.1415160745382309,11.855109416765652,0.19762448966503143
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_2.jpg,Stargardt,G12,0.08932638168334961,10.994553917900154,0.2200360745191574
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_3.jpg,Stargardt,G04,0.2056460976600647,15.137375538286292,0.13394007086753845
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_4.jpg,Stargardt,G07,0.35729241371154785,16.33745891365637,0.11872667074203491
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_5.jpg,Stargardt,G11,0.21762163937091827,12.330506933444084,0.18138694763183594
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_6.jpg,Stargardt,G10,0.03432434797286987,9.008287986821351,0.29418689012527466
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.21367943286895752,13.882319060406845,0.17946158349514008
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_8.jpg,Stargardt,G03,0.12353052943944931,12.555009397464286,0.19605256617069244
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.19363528490066528,14.482017799010265,0.15590818226337433
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_LE_Toxo_1.jpg,TOXO,,0.1973973512649536,12.921737797569794,0.1776133030653
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_LE_Toxo_2.jpg,TOXO,,0.4117838442325592,18.274164719803856,0.08754166215658188
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_LE_Toxo_3.jpg,TOXO,,0.22379739582538605,13.489108180524866,0.17953477799892426
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_RE_Toxo_1.jpg,TOXO,,0.2452438622713089,16.108180999608887,0.12721852958202362
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_RE_Toxo_2.jpg,TOXO,,0.42892149090766907,20.33423004956886,0.07538633793592453
-"Old CycleGAN (saw every patient), all master pairs",Actual_Original_Master/TOXO/CF_RE_Toxo_3.jpg,TOXO,,0.19273817539215088,13.396857196203012,0.1834837943315506
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.2112695425748825,12.23465074878735,0.2031095027923584
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.23684298992156982,16.029171594110394,0.11387544870376587
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.42445993423461914,14.405005879317736,0.17849379777908325
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.1984890103340149,11.669146491428128,0.2174747735261917
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.20747224986553192,14.08305969977016,0.15149469673633575
+CycleGAN without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.32764720916748047,16.46677602729077,0.12953166663646698
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.24866952002048492,15.256542140122303,0.13267146050930023
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.34842991828918457,11.95541098882967,0.22618581354618073
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.4309506416320801,13.559987010539897,0.19335384666919708
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.13601873815059662,8.698260917164587,0.30750250816345215
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.22641928493976593,13.774394634961668,0.16608209908008575
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.3738555610179901,10.694715058955941,0.2705431878566742
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.2222021073102951,11.019657621455053,0.24550719559192657
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.4397745132446289,14.489514215412429,0.17719675600528717
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.1316116601228714,9.332876859459647,0.28550851345062256
+CycleGAN without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.37569543719291687,15.656900849256184,0.1320193111896515
+CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.266500324010849,12.545732645962023,0.19922102987766266
+CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.21116219460964203,15.1650460443493,0.1296747326850891
+CycleGAN without test patients,Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.4079159200191498,14.678021514546378,0.15411515533924103
+CycleGAN without test patients,Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.3319234549999237,13.681526970477151,0.16848821938037872
+CycleGAN without test patients,Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.16860486567020416,14.051043359616816,0.16726498305797577
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.38885048031806946,14.083939685581743,0.16703957319259644
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.20487229526042938,15.273378597498837,0.1363995522260666
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.19215147197246552,13.86117901571405,0.16044606268405914
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.20659993588924408,15.357653169665612,0.1412508636713028
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.3307550251483917,16.2416378902751,0.12619979679584503
+CycleGAN without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.3063965141773224,15.344424444981872,0.14433902502059937
+CycleGAN without test patients,Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.3477216958999634,16.467857058400813,0.12171449512243271
+CycleGAN without test patients,Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.3490423262119293,18.170335627722277,0.09191527217626572
+CycleGAN without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.2786392867565155,14.664386552825835,0.1513717919588089
+CycleGAN without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.14069987833499908,13.240263615152175,0.1664033681154251
+CycleGAN without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.3239997327327728,14.39656350149804,0.1480530947446823
+CycleGAN without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.1262398660182953,13.061926695080215,0.17386919260025024
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.03950732573866844,11.626991762123492,0.21626286208629608
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.22108988463878632,16.55784258796835,0.10863342136144638
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.18137627840042114,15.099084493289755,0.14160192012786865
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.0449204184114933,11.612551576677603,0.21397198736667633
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.2311314344406128,17.234391861886984,0.0988553836941719
+CycleGAN without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.20437854528427124,16.94713821834072,0.108773373067379
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_4.jpg,Atrophy,A10,0.32196542620658875,18.957620688378082,0.08611363917589188
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_5.jpg,Atrophy,A03,0.27756455540657043,17.108361451647593,0.11008992791175842
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_LE_Atrophy_9.jpg,Atrophy,A01,0.5524463653564453,21.858154446767788,0.06636887788772583
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_4.jpg,Atrophy,A10,0.3194693326950073,18.907988721208582,0.09085974842309952
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_5.jpg,Atrophy,A03,0.2690351605415344,18.480866354198394,0.09578907489776611
+Pix2Pix without test patients,Actual_Original_Master/Atrophy/CF_RE_Atrophy_9.jpg,Atrophy,A01,0.4644477069377899,21.433266583485498,0.0614963173866272
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_16.jpg,CNVM,V02,0.30516231060028076,16.82758165086651,0.11880665272474289
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_17.jpg,CNVM,V13,0.4961376488208771,18.540832310685584,0.10055145621299744
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_19.jpg,CNVM,V17,0.5966084599494934,20.94009892961145,0.07490163296461105
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_21.jpg,CNVM,V25,0.24211911857128143,16.28380803636704,0.12482845783233643
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_LE_CNVM_7.jpg,CNVM,V22,0.16735021770000458,12.574899087930305,0.18177247047424316
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_16.jpg,CNVM,V02,0.30528542399406433,15.987148384620086,0.1356372833251953
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_17.jpg,CNVM,V13,0.30706509947776794,15.897329883658376,0.13226251304149628
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_19.jpg,CNVM,V17,0.5433127284049988,20.83023352218589,0.07063639163970947
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_21.jpg,CNVM,V25,0.210316464304924,15.806730755408495,0.12774477899074554
+Pix2Pix without test patients,Actual_Original_Master/CNVM/CF_RE_CNVM_7.jpg,CNVM,V22,0.35122084617614746,15.981810201742626,0.12535671889781952
+Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_17.jpg,CSR,R19,0.4307226836681366,20.06817158252744,0.08104443550109863
+Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_21.jpg,CSR,R16,0.2985190153121948,17.715263166672813,0.10485037416219711
+Pix2Pix without test patients,Actual_Original_Master/CSR/CF_LE_CSR_5.jpg,CSR,R03,0.35652753710746765,17.45172468127824,0.10495533794164658
+Pix2Pix without test patients,Actual_Original_Master/CSR/CF_RE_CSR_17.jpg,CSR,R19,0.40663036704063416,18.721501687674984,0.0923551619052887
+Pix2Pix without test patients,Actual_Original_Master/CSR/CF_RE_CSR_5.jpg,CSR,R03,0.2673802077770233,17.06595794725817,0.10229036211967468
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_14.jpg,Choroiditis,C03,0.5052192807197571,22.200881211804585,0.06289426237344742
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_17.jpg,Choroiditis,C06,0.2673465609550476,13.869412928979257,0.16654455661773682
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_LE_Choroiditis_4.jpg,Choroiditis,C12,0.2439122200012207,14.479927868632705,0.15951253473758698
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_14.jpg,Choroiditis,C03,0.3279825747013092,21.378159101574283,0.0619465596973896
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_17.jpg,Choroiditis,C06,0.44595015048980713,16.579356710804614,0.10949578136205673
+Pix2Pix without test patients,Actual_Original_Master/Choroiditis/CF_RE_Choroiditis_4.jpg,Choroiditis,C12,0.3915588855743408,18.53864377313942,0.0899040475487709
+Pix2Pix without test patients,Actual_Original_Master/Normal/CF_LE_Normal_3.jpg,Normal,N02,0.3564019203186035,19.42934819463709,0.08371024578809738
+Pix2Pix without test patients,Actual_Original_Master/Normal/CF_RE_Normal_3.jpg,Normal,N02,0.23552004992961884,13.98297575507132,0.1749860793352127
+Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_1.jpg,Scar,S07,0.37744084000587463,17.90954568398037,0.0971265435218811
+Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_LE_Scar_5.jpg,Scar,S01,0.18588440120220184,13.830160618939686,0.16311784088611603
+Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_1.jpg,Scar,S07,0.43556836247444153,18.854520120993353,0.08720777183771133
+Pix2Pix without test patients,Actual_Original_Master/SCAR/CF_RE_Scar_5.jpg,Scar,S01,0.16931088268756866,13.892843899609474,0.1628543734550476
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_13.jpg,Stargardt,G08,0.05075005814433098,11.407455395204174,0.21642206609249115
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_7.jpg,Stargardt,G09,0.29013773798942566,19.360510015006536,0.082493357360363
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_LE_Stargardt_9.jpg,Stargardt,G02,0.268131822347641,17.138349475259012,0.09882494062185287
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_13.jpg,Stargardt,G08,0.058967333287000656,12.418890673210637,0.19433049857616425
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_7.jpg,Stargardt,G09,0.27869221568107605,17.391636253657257,0.11092916876077652
+Pix2Pix without test patients,Actual_Original_Master/Stargardt/CF_RE_Stargardt_9.jpg,Stargardt,G02,0.27312424778938293,18.444712703372854,0.08589375019073486
