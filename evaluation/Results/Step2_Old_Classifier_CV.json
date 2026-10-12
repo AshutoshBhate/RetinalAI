@@ -1,0 +1,144 @@
+{
+ "classes": [
+  "Choroiditis",
+  "Normal",
+  "Scar"
+ ],
+ "images": 62,
+ "patients": 33,
+ "folds": 5,
+ "mean_accuracy": 0.4548387096774194,
+ "lowest_accuracy": 0.4032258064516129,
+ "highest_accuracy": 0.532258064516129,
+ "mean_accuracy_with_best_epoch_picked_on_test_fold": 0.5903225806451613,
+ "majority_class_accuracy": 0.43548387096774194,
+ "summed_confusion_matrix": [
+  [
+   93,
+   8,
+   34
+  ],
+  [
+   29,
+   8,
+   28
+  ],
+  [
+   64,
+   6,
+   40
+  ]
+ ],
+ "runs": [
+  {
+   "seed": 0,
+   "accuracy_after_40_epochs": 0.4032258064516129,
+   "accuracy_if_best_epoch_is_picked_on_the_test_fold": 0.5645161290322581,
+   "confusion_matrix": [
+    [
+     16,
+     2,
+     9
+    ],
+    [
+     5,
+     2,
+     6
+    ],
+    [
+     13,
+     2,
+     7
+    ]
+   ]
+  },
+  {
+   "seed": 1,
+   "accuracy_after_40_epochs": 0.43548387096774194,
+   "accuracy_if_best_epoch_is_picked_on_the_test_fold": 0.5806451612903226,
+   "confusion_matrix": [
+    [
+     14,
+     1,
+     12
+    ],
+    [
+     5,
+     1,
+     7
+    ],
+    [
+     9,
+     1,
+     12
+    ]
+   ]
+  },
+  {
+   "seed": 2,
+   "accuracy_after_40_epochs": 0.46774193548387094,
+   "accuracy_if_best_epoch_is_picked_on_the_test_fold": 0.5645161290322581,
+   "confusion_matrix": [
+    [
+     21,
+     2,
+     4
+    ],
+    [
+     6,
+     1,
+     6
+    ],
+    [
+     14,
+     1,
+     7
+    ]
+   ]
+  },
+  {
+   "seed": 3,
+   "accuracy_after_40_epochs": 0.43548387096774194,
+   "accuracy_if_best_epoch_is_picked_on_the_test_fold": 0.5806451612903226,
+   "confusion_matrix": [
+    [
+     18,
+     2,
+     7
+    ],
+    [
+     5,
+     2,
+     6
+    ],
+    [
+     14,
+     1,
+     7
+    ]
+   ]
+  },
+  {
+   "seed": 4,
+   "accuracy_after_40_epochs": 0.532258064516129,
+   "accuracy_if_best_epoch_is_picked_on_the_test_fold": 0.6612903225806451,
+   "confusion_matrix": [
+    [
+     24,
+     1,
+     2
+    ],
+    [
+     8,
+     2,
+     3
+    ],
+    [
+     14,
+     1,
+     7
+    ]
+   ]
+  }
+ ]
+}

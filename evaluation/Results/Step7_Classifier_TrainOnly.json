@@ -1,0 +1,85 @@
+{
+ "majority_class_test_accuracy": 0.46153846153846156,
+ "Generated FAF (CycleGAN without test patients)": {
+  "training_images": 49,
+  "test_images": 13,
+  "cv_mean_accuracy": 0.4,
+  "cv_lowest_accuracy": 0.30612244897959184,
+  "cv_highest_accuracy": 0.4489795918367347,
+  "test_correct": 7,
+  "test_accuracy": 0.5384615384615384,
+  "test_confusion_matrix": [
+   [
+    4,
+    0,
+    2
+   ],
+   [
+    0,
+    2,
+    1
+   ],
+   [
+    3,
+    0,
+    1
+   ]
+  ],
+  "test_predictions": {
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_11.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_13.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_7.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_10.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_12.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_14.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Normal/CF_LE_Normal_3.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Normal/CF_LE_Normal_6.jpg": "Normal",
+   "Final_Merged_CF_Renumbered/Normal/CF_RE_Normal_5.jpg": "Normal",
+   "Final_Merged_CF_Renumbered/Scar/CF_LE_Scar_1.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Scar/CF_LE_Scar_6.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Scar/CF_RE_Scar_1.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Scar/CF_RE_Scar_11.jpg": "Choroiditis"
+  }
+ },
+ "Real CF photos, no GAN": {
+  "training_images": 49,
+  "test_images": 13,
+  "cv_mean_accuracy": 0.46938775510204084,
+  "cv_lowest_accuracy": 0.40816326530612246,
+  "cv_highest_accuracy": 0.5306122448979592,
+  "test_correct": 5,
+  "test_accuracy": 0.38461538461538464,
+  "test_confusion_matrix": [
+   [
+    3,
+    2,
+    1
+   ],
+   [
+    0,
+    0,
+    3
+   ],
+   [
+    2,
+    0,
+    2
+   ]
+  ],
+  "test_predictions": {
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_11.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_13.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_LE_Choroiditis_7.jpg": "Normal",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_10.jpg": "Normal",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_12.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Choroiditis/CF_RE_Choroiditis_14.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Normal/CF_LE_Normal_3.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Normal/CF_LE_Normal_6.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Normal/CF_RE_Normal_5.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Scar/CF_LE_Scar_1.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Scar/CF_LE_Scar_6.jpg": "Choroiditis",
+   "Final_Merged_CF_Renumbered/Scar/CF_RE_Scar_1.jpg": "Scar",
+   "Final_Merged_CF_Renumbered/Scar/CF_RE_Scar_11.jpg": "Scar"
+  }
+ }
+}

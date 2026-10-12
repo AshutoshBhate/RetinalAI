@@ -362,20 +362,21 @@ def generate_gradcam_for_faf(classifier, device, faf_np_array, target_class=None
 # ── 3. CONFIGURATION ────────────────────────────────────────────────────────
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-WEIGHTS_DIR = os.path.join(BASE_DIR, "cycleGAN_Weights")
-RESNET_WEIGHTS = os.path.join(BASE_DIR, "Codes", "Training", "Training_3_classes", "best_resnet_faf_classifier.pth")
+WEIGHTS_DIR = os.path.join(BASE_DIR, "cycleGAN_Weights_TrainOnly")
+RESNET_WEIGHTS = os.path.join(BASE_DIR, "Codes", "Training", "Training_3_classes_TrainOnly", "resnet_faf_classifier.pth")
 CLASS_NAMES = ["Choroiditis", "Normal", "Scar"]
 
 # Find latest CycleGAN weight
 CYCLEGAN_WEIGHT = None
 if os.path.isdir(WEIGHTS_DIR):
-    pth_files = sorted([f for f in os.listdir(WEIGHTS_DIR) if f.endswith(".pth")])
+    pth_files = sorted([f for f in os.listdir(WEIGHTS_DIR) if f.startswith("G_AB") and f.endswith(".pth")])
     if pth_files:
         CYCLEGAN_WEIGHT = os.path.join(WEIGHTS_DIR, pth_files[-1])
 
 # CF source directories for "safe" images
-CF_DIR = os.path.join(BASE_DIR, "Dataset", "Final_Merged_CF")
-FAF_DATASET_DIR = os.path.join(BASE_DIR, "Dataset", "Generated_FAF_CNN_Dataset_Refactored_3classes")
+CF_DIR = os.path.join(BASE_DIR, "Dataset", "Final_Merged_CF_Renumbered")
+TEST_LIST = os.path.join(BASE_DIR, "Dataset", "Splits", "classifier_cf_test.txt")
+FAF_DATASET_DIR = os.path.join(BASE_DIR, "Dataset", "Generated_FAF_CNN_Dataset_3classes_TrainOnlyGAN")
 
 
 # ── 4. HELPER FUNCTIONS ─────────────────────────────────────────────────────
@@ -424,14 +425,19 @@ def classify_faf(classifier, device, faf_np_array):
     return probs.cpu().numpy()
 
 def get_cf_images_for_class(class_name):
-    """Get CF images for a specific disease class."""
-    class_dir = os.path.join(CF_DIR, class_name)
-    if not os.path.isdir(class_dir):
+    """Get the held-out test CF images for a specific disease class."""
+    if not os.path.isfile(TEST_LIST):
         return []
-    return sorted([
-        os.path.join(class_dir, f) for f in os.listdir(class_dir)
-        if f.lower().endswith(('.jpg', '.jpeg', '.png'))
-    ])
+    images = []
+    with open(TEST_LIST) as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            folder, cls, name = line.strip().split("/")
+            path = os.path.join(CF_DIR, cls, name)
+            if cls == class_name and os.path.isfile(path):
+                images.append(path)
+    return sorted(images)
 
 
 # ── 5. STREAMLIT UI ─────────────────────────────────────────────────────────
@@ -527,7 +533,7 @@ with st.sidebar:
         RetinalAI Pipeline
     </div>
     <div style="color: #718096; font-size: 0.75rem; margin-top: 0.3rem;">
-        CF → FAF → Classification → Segmentation
+        CF → FAF → Classification → Grad-CAM
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -552,16 +558,17 @@ with st.sidebar:
 <div style="background: rgba(99,179,237,0.1); border: 1px solid rgba(99,179,237,0.3);
             border-radius: 12px; padding: 1rem; margin-top: 0.5rem;">
     <div style="color: #63b3ed; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">
-        ℹ️ Data Leakage Note
+        ℹ️ Held-Out Test Photos
     </div>
     <div style="color: #a0aec0; font-size: 0.78rem; line-height: 1.6;">
-        The ResNet was trained on <b>generated FAF</b> images (not CF images).
-        The CycleGAN was trained on <b>unpaired</b> CF/FAF data.
+        Both models were retrained without <b>22 held-out patients</b>.
+        The dataset choices in Step 1 are the <b>13 classifier photos</b> of those patients, so neither the CycleGAN nor the classifier saw them.
         <br><br>
-        For the demo, the pipeline processes a <b>fresh CF image through both models sequentially</b> — the classifier never saw
-        the exact FAF that the CycleGAN produces at inference time, since it generates a new image each run.
+        In testing, the classifier got <b>7 of these 13 right</b> (always answering Choroiditis gets 6).
+        In this app it gets 8, because here the FAF skips the JPEG save the test images went through.
+        Treat a single prediction as a demo, not a diagnosis.
         <br><br>
-        <b>Safest pick:</b> Use images from an external source or a class not in the 3 trained classes.
+        An uploaded photo can come from anywhere, including the training set.
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -573,7 +580,7 @@ with st.sidebar:
 <div style="background: rgba(245,101,101,0.08); border: 1px solid rgba(245,101,101,0.2);
             border-radius: 12px; padding: 1rem; margin-top: 0.5rem;">
     <div style="color: #fc8181; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">
-        🔍 Segmentation Method
+        🔍 Heatmap Method
     </div>
     <div style="color: #a0aec0; font-size: 0.78rem; line-height: 1.6;">
         <b>Grad-CAM</b> (Gradient-weighted Class Activation Mapping) highlights the regions
@@ -581,6 +588,8 @@ with st.sidebar:
         <br><br>
         It uses <b>no additional training</b> — the heatmap is computed from the gradients of 
         the ResNet-18's last convolutional layer (<code>layer4</code>).
+        <br><br>
+        It shows <b>where the classifier looked</b>, not a segmentation of the disease.
         <br><br>
         <b>Reference:</b> Selvaraju et al., ICCV 2017
     </div>
@@ -593,15 +602,15 @@ with st.sidebar:
 st.markdown('<div class="main-header">RetinalAI — Full Pipeline Demo</div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="sub-header">
-    Upload a Colour Fundus image → Generate FAF → Classify Disease → Segment Disease Region<br>
-    <span style="font-size: 0.85rem; color: #718096;">3-Class Model: Choroiditis · Normal · Scar &nbsp;|&nbsp; Grad-CAM Segmentation</span>
+    Upload a Colour Fundus image → Generate FAF → Classify Disease → Show Grad-CAM Heatmap<br>
+    <span style="font-size: 0.85rem; color: #718096;">3-Class Model: Choroiditis · Normal · Scar &nbsp;|&nbsp; Grad-CAM Heatmap</span>
 </div>
 """, unsafe_allow_html=True)
 
 # Check models exist
 models_ok = True
 if CYCLEGAN_WEIGHT is None:
-    st.error("❌ No CycleGAN weights found in `cycleGAN_Weights/`.")
+    st.error("❌ No CycleGAN weights found in `cycleGAN_Weights_TrainOnly/`.")
     models_ok = False
 if not os.path.isfile(RESNET_WEIGHTS):
     st.error(f"❌ ResNet weights not found at `{RESNET_WEIGHTS}`.")
@@ -622,17 +631,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 input_method = st.radio(
-    "Input method", ["📁 Upload Image", "🗂️ Choose from Dataset (Choroiditis / Normal / Scar)"],
+    "Input method", ["📁 Upload Image", "🗂️ Choose a Held-Out Test Photo (Choroiditis / Normal / Scar)"],
     horizontal=True, label_visibility="collapsed"
 )
 
 input_image = None
 source_class = None
+input_key = None
 
 if input_method == "📁 Upload Image":
     uploaded = st.file_uploader("Upload a CF Image", type=["jpg", "jpeg", "png", "bmp", "tif", "tiff"])
     if uploaded:
         input_image = Image.open(uploaded).convert('RGB')
+        input_key = ("upload", uploaded.file_id)
 else:
     sel_class = st.selectbox("Select disease class:", CLASS_NAMES)
     cf_images = get_cf_images_for_class(sel_class)
@@ -641,8 +652,16 @@ else:
         sel_path = os.path.join(CF_DIR, sel_class, sel_file)
         input_image = Image.open(sel_path).convert('RGB')
         source_class = sel_class
+        input_key = ("dataset", sel_class, sel_file)
     else:
         st.warning(f"No CF images found for {sel_class}.")
+
+if st.session_state.get('input_key') != input_key:
+    st.session_state.input_key = input_key
+    st.session_state.faf_result = None
+    st.session_state.show_classify = False
+    st.session_state.classification = None
+    st.session_state.gradcam_result = None
 
 if input_image is not None:
     st.markdown('<div class="fancy-divider"></div>', unsafe_allow_html=True)
@@ -822,18 +841,18 @@ if input_image is not None:
             st.markdown("""
 <div style="margin-bottom: 0.8rem;">
     <span class="step-badge">4</span>
-    <span class="step-title">Segment Disease Region (Grad-CAM)</span>
+    <span class="step-title">Where the Classifier Looked (Grad-CAM)</span>
 </div>
 """, unsafe_allow_html=True)
 
             st.markdown("""
 <div style="color: #a0aec0; font-size: 0.88rem; margin-bottom: 1rem; line-height: 1.6;">
     Grad-CAM highlights the <b>regions of the FAF image that most influenced the classification decision</b>.
-    The left image shows the original FAF for anatomical context; the right shows the disease demarcation overlay.
+    The left image shows the generated FAF; the right shows the Grad-CAM overlay. It shows where the classifier looked, not a segmentation of the disease.
 </div>
 """, unsafe_allow_html=True)
 
-            if st.button("🔬 Segment Disease Region", type="primary", key="segment"):
+            if st.button("🔬 Show Grad-CAM Heatmap", type="primary", key="segment"):
                 classifier, cls_device = load_resnet(RESNET_WEIGHTS)
                 with st.spinner("🧬 Computing Grad-CAM heatmap..."):
                     start_seg = time.time()
@@ -864,7 +883,7 @@ if input_image is not None:
                 # ── Side-by-side display: Clean FAF | Segmented FAF ──
                 st.markdown("""
 <div style="color: #93c5fd; font-weight: 700; font-size: 1.1rem; margin: 1rem 0 0.5rem 0;">
-    🔬 Disease Region Demarcation
+    🔬 Grad-CAM Overlay
 </div>
 """, unsafe_allow_html=True)
 
@@ -874,7 +893,7 @@ if input_image is not None:
                     st.image(faf_output, use_container_width=True, clamp=True)
 
                 with col_seg:
-                    st.markdown('<div class="image-frame"><div class="image-label seg-label">🔥 Disease Segmentation Overlay</div></div>', unsafe_allow_html=True)
+                    st.markdown('<div class="image-frame"><div class="image-label seg-label">🔥 Grad-CAM Overlay</div></div>', unsafe_allow_html=True)
                     st.image(combined_overlay, use_container_width=True, clamp=True)
 
                 # ── Metrics row ──
@@ -890,7 +909,7 @@ if input_image is not None:
                     st.markdown(f"""
 <div class="seg-metric-card">
     <div class="seg-metric-value">{seg_time*1000:.0f}ms</div>
-    <div class="seg-metric-label">Segmentation Time</div>
+    <div class="seg-metric-label">Grad-CAM Time</div>
 </div>
 """, unsafe_allow_html=True)
                 with col_m3:
@@ -904,7 +923,7 @@ if input_image is not None:
                     st.markdown(f"""
 <div class="seg-metric-card">
     <div class="seg-metric-value" style="background: {interp_color}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{interp_text}</div>
-    <div class="seg-metric-label">Disease Activity</div>
+    <div class="seg-metric-label">Heatmap Spread</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -927,15 +946,15 @@ if input_image is not None:
                 seg_pil = Image.fromarray((combined_overlay * 255).astype(np.uint8))
                 seg_buf = io.BytesIO()
                 seg_pil.save(seg_buf, format="PNG")
-                st.download_button("📥 Download Segmented Image", data=seg_buf.getvalue(), 
-                                  file_name="segmented_faf.png", mime="image/png", key="dl_seg")
+                st.download_button("📥 Download Grad-CAM Overlay", data=seg_buf.getvalue(), 
+                                  file_name="gradcam_faf.png", mime="image/png", key="dl_seg")
 
 
 # ── FOOTER ───────────────────────────────────────────────────────────────────
 st.markdown('<div class="fancy-divider"></div>', unsafe_allow_html=True)
 st.markdown("""
 <div style="text-align: center; color: #4a5568; font-size: 0.75rem; padding: 1rem 0;">
-    RetinalAI Pipeline Demo • CF → FAF → Classification → Segmentation • Built with Streamlit & PyTorch<br>
-    <span style="color: #2d3748;">Segmentation: Grad-CAM (Selvaraju et al., ICCV 2017) • No additional training required</span>
+    RetinalAI Pipeline Demo • CF → FAF → Classification → Grad-CAM • Built with Streamlit & PyTorch<br>
+    <span style="color: #2d3748;">Heatmaps: Grad-CAM (Selvaraju et al., ICCV 2017) • No additional training required</span>
 </div>
 """, unsafe_allow_html=True)

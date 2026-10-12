@@ -1,15 +1,15 @@
-# RetinalAI — AI-Based Macular Disease Detection & Classification
+# RetinalAI: Synthetic FAF Images from Colour Fundus Photos
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**Low-cost retinal disease screening using CycleGAN image translation, ResNet-18 classification, and Grad-CAM explainability — eliminating the need for expensive FAF imaging equipment.**
+**A B.E. final-year project: a CycleGAN turns a colour fundus photo into a synthetic fundus autofluorescence (FAF) image, a ResNet-18 classifies the synthetic FAF, and a Streamlit app runs both with a Grad-CAM heatmap. A proof of concept on a small hospital dataset, tested on patients the models never saw.**
 
-[Pipeline](#-pipeline) · [Results](#-results) · [Getting Started](#-getting-started) · [Project Structure](#-project-structure) · [How It Works](#-how-it-works)
+[Pipeline](#pipeline) · [Data](#data-and-the-held-out-test-set) · [Results](#results-on-held-out-patients) · [Getting Started](#getting-started) · [Project Structure](#project-structure) · [How It Works](#how-it-works)
 
 </div>
 
@@ -17,21 +17,22 @@
 
 ## The Problem
 
-**Fundus Autofluorescence (FAF)** imaging reveals metabolic changes in the retinal pigment epithelium that are _invisible_ in standard colour photographs — making it crucial for diagnosing diseases like Choroiditis, AMD, and Retinitis Pigmentosa. However, **FAF machines cost lakhs of rupees** and are unavailable in rural or low-resource clinical settings.
+**Fundus autofluorescence (FAF)** imaging shows changes in the retinal pigment epithelium that a colour photo doesn't, which helps with diseases such as Stargardt disease, AMD and choroiditis. It needs a confocal scanning laser ophthalmoscope, which many clinics don't have. **Colour fundus (CF)** cameras are far more common.
 
-**Our solution:** Replace the expensive hardware with AI. A simple **RGB camera + 20D lens** (costing under ₹5,000) captures a Colour Fundus (CF) image, and a two-stage deep learning pipeline does the rest — translating CF to synthetic FAF, classifying the disease, and highlighting the affected region.
+This project asks whether a model can learn to produce the FAF view from the colour photo, and whether a classifier can work from that synthetic FAF.
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>Input: Colour Fundus (CF)</b></td>
-      <td align="center"><b>Output: Synthetic FAF</b></td>
+      <td align="center"><b>Input: colour fundus (CF)</b></td>
+      <td align="center"><b>Output: synthetic FAF</b></td>
     </tr>
     <tr>
       <td><img src="images/sample_cf.png" width="250"/></td>
       <td><img src="images/sample_faf.png" width="250"/></td>
     </tr>
   </table>
+  <em>An AMD photo from the training set and the original CycleGAN's output for it</em>
 </div>
 
 ---
@@ -40,132 +41,76 @@
 
 ```mermaid
 flowchart LR
-    subgraph HW["Hardware"]
-        A["3D-Printed Scope\n+ 20D Lens\n+ RGB Camera"]
-    end
-
-    subgraph S1["Stage 1 — Image Translation"]
-        B["CycleGAN\n(UNet Generator)"]
-    end
-
-    subgraph S2["Stage 2 — Classification"]
-        C["ResNet-18\n(Transfer Learning)"]
-    end
-
-    subgraph S3["Stage 3 — Explainability"]
-        D["Grad-CAM\nHeatmap"]
-    end
-
-    subgraph OUT["Output"]
-        E["Disease Diagnosis\n+ Region Highlight"]
-    end
-
-    A -- "CF Image\n(256×256)" --> B
-    B -- "Synthetic FAF\n(256×256)" --> C
-    C -- "Class Probabilities" --> D
-    D -- "Heatmap Overlay" --> E
-
-    style HW fill:#1a1a2e,stroke:#667eea,color:#e2e8f0
-    style S1 fill:#1a1a2e,stroke:#764ba2,color:#e2e8f0
-    style S2 fill:#1a1a2e,stroke:#38b2ac,color:#e2e8f0
-    style S3 fill:#1a1a2e,stroke:#ed8936,color:#e2e8f0
-    style OUT fill:#1a1a2e,stroke:#68d391,color:#e2e8f0
+    A["Colour fundus photo"] --> B["CycleGAN generator G_AB\n(U-Net, CF → FAF)"]
+    B -- "Synthetic FAF\n(256×256)" --> C["ResNet-18\n(3 classes)"]
+    C --> D["Choroiditis / Normal / Scar"]
+    C --> E["Grad-CAM heatmap\n(where the classifier looked)"]
 ```
 
-### Detailed Architecture
-
-```mermaid
-flowchart TB
-    subgraph TRAIN["Training Phase (Offline)"]
-        direction LR
-        CF_DATA["315 Unpaired\nCF Images"] --> CYCLEGAN_TRAIN["Train CycleGAN\n100 epochs\nKaggle P100"]
-        FAF_DATA["309 Unpaired\nFAF Images"] --> CYCLEGAN_TRAIN
-        CYCLEGAN_TRAIN --> WEIGHTS_CG["Generator Weights\n(G_AB_95.pth)"]
-
-        GEN_FAF["62 Generated\nFAF Images"] --> RESNET_TRAIN["Train ResNet-18\nTransfer Learning\n40 epochs"]
-        RESNET_TRAIN --> WEIGHTS_RN["Classifier Weights\n(best_resnet.pth)"]
-    end
-
-    subgraph INFER["Inference Pipeline (Real-time)"]
-        direction LR
-        INPUT["CF Image"] --> GEN["CycleGAN\nGenerator"] --> FAF_OUT["Synthetic\nFAF"]
-        FAF_OUT --> CLASS["ResNet-18\nClassifier"]
-        CLASS --> PRED["Choroiditis\nNormal\nScar"]
-        FAF_OUT --> GCAM["Grad-CAM\n(layer4)"]
-        GCAM --> HEAT["Disease\nHeatmap"]
-    end
-
-    WEIGHTS_CG -.-> GEN
-    WEIGHTS_RN -.-> CLASS
-
-    style TRAIN fill:#0f0c29,stroke:#667eea,color:#e2e8f0
-    style INFER fill:#0f0c29,stroke:#68d391,color:#e2e8f0
-```
+A low-cost capture device (3D-printed scope, 20D lens, LED and camera) was planned but never built. Every image in this project comes from the hospital datasets.
 
 ---
 
-## Results
+## Data and the Held-Out Test Set
 
-### CycleGAN — CF to FAF Translation
+- **Images:** two hospital datasets. The main one has 259 paired CF/FAF photos across 17 diseases; the second adds unpaired photos. The CycleGAN trains on a separate folder of 624 unpaired CF and FAF files. The data is not public.
+- **Patients:** the file names carry no patient IDs, so photos were grouped by patient using the original hospital files. A patient's left and right eye count as one patient. 106 patients in 7 diseases got a patient code. 65 pairs from 10 rarer diseases have none, so they are only ever used for training.
+- **Held-out test set:** 22 patients (20% of each disease, fixed seed 2026). Their photos were removed from every training set. Some photos had been re-saved under other names, so photos were also matched by their blood-vessel pattern (SIFT + RANSAC), which is unique to each eye. That found 8 more copies of test patients' eyes, which were removed too.
+- **Classifier set:** 62 CF photos in 3 classes (Choroiditis 27, Normal 13, Scar 22). Training: 49 photos from 26 patients. Test: 13 photos from 7 patients.
 
-The CycleGAN learns to translate Colour Fundus images into synthetic FAF images using **unpaired** data (no pixel-aligned pairs required).
+The split lists are in [`Dataset/Splits/`](Dataset/Splits) and the code that makes them is [`evaluation/Step1_Patient_Split.py`](evaluation/Step1_Patient_Split.py).
+
+---
+
+## Results on Held-Out Patients
+
+**In short:** on patients the models never saw, Pix2Pix reproduces the real FAF more closely than the CycleGAN on every pixel score, a blurry average image beats both on SSIM, and the classifier is close to guessing, with or without the GAN step.
+
+### CF → FAF translation (39 test pairs from 20 patients)
+
+| Model | SSIM | PSNR | MAE |
+| ----- | ---- | ---- | --- |
+| CycleGAN, trained without the test patients | 0.258 | 14.07 dB | 0.168 |
+| Pix2Pix, trained without the test patients | 0.324 | 17.40 dB | 0.113 |
+| Original CycleGAN (it had trained on these patients, so not a fair test) | 0.278 | 15.58 dB | 0.143 |
+| Baseline: one fixed image, the average training FAF | 0.372 | 17.48 dB | 0.113 |
+| Baseline: a grey copy of the CF photo | 0.237 | 10.69 dB | 0.256 |
+
+SSIM, PSNR and MAE compare the images pixel by pixel. A blurry average image already scores well on them, because they punish a sharp detail in slightly the wrong place more than they punish blur. So this table shows how closely each model reproduces the real FAF pixel by pixel. It cannot show whether the synthetic FAF carries the right clinical detail. Resampling the 20 test patients puts the CycleGAN's SSIM between 0.22 and 0.30 and Pix2Pix's between 0.27 and 0.38 (95% range).
 
 <div align="center">
-  <img src="images/cyclegan_output.png" width="700"/>
+  <img src="images/heldout_examples.png" width="800"/>
   <br>
-  <em>Original CF images (left) → CycleGAN-generated synthetic FAF images (right)</em>
+  <em>Test patients the models never saw: the three pairs closest to the CycleGAN's median score, one per disease</em>
 </div>
 
 <br>
 
-#### CycleGAN vs. Pix2Pix Baseline
+In these examples the CycleGAN keeps the colour photo's structure (vessels, lesion outlines) and changes its tone, but it doesn't reproduce FAF-specific signs such as the dark optic disc, the dark macula or the ring in Stargardt disease. Pix2Pix gets the typical FAF layout (dark disc and macula) but blurs the detail away, which is why it scores higher.
 
-| Metric   | Pix2Pix (Baseline) | CycleGAN (Ours) | Improvement  |
-| -------- | ------------------ | --------------- | ------------ |
-| **SSIM** | 0.2333             | **0.6076**      | **+160%**    |
-| **PSNR** | 15.99 dB           | **24.04 dB**    | **+8.05 dB** |
-| **MAE**  | —                  | **0.0500**      | —            |
+### Classification: Choroiditis, Normal or Scar
 
-> CycleGAN outperforms Pix2Pix on every metric, for every disease case — while requiring **no paired data**.
+| Input to the classifier | Cross-validation on the 26 training patients | Test on the 13 held-out photos |
+| ----------------------- | -------------------------------------------- | ------------------------------ |
+| Synthetic FAF from the CycleGAN | 40.0% | 53.8% (7/13) |
+| The real CF photo, no GAN | 46.9% | 38.5% (5/13) |
+| Always answering "Choroiditis" | 42.9% | 46.2% (6/13) |
 
-### ResNet-18 — Disease Classification
-
-3-class classifier trained on CycleGAN-generated FAF images using transfer learning (ImageNet pretrained, only FC layer fine-tuned).
-
-| Metric                  | Value                         |
-| ----------------------- | ----------------------------- |
-| **Validation Accuracy** | **76.92%**                    |
-| Training Accuracy       | 75.51%                        |
-| Classes                 | Choroiditis, Normal, Scar     |
-| Dataset Size            | 62 images (49 train / 13 val) |
+Cross-validation is patient-grouped, 5 folds, averaged over 5 seeds. The test set was used once, after all choices were fixed.
 
 <div align="center">
-  <img src="images/confusion_matrix.png" width="700"/>
-  <br>
-  <em>Confusion matrix — both raw counts and normalized percentages</em>
+  <img src="images/test_confusion_matrix.png" width="380"/>
 </div>
 
-<br>
+Both versions are close to always answering the largest class, so the GAN step neither helps nor hurts the classifier here. With 13 test photos, each photo moves accuracy by 7.7 percentage points, so treat the test numbers as rough.
 
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="images/per_class_accuracy.png" width="400"/></td>
-      <td><img src="images/tp_fp_fn_tn.png" width="400"/></td>
-    </tr>
-    <tr>
-      <td align="center"><em>Per-class accuracy breakdown</em></td>
-      <td align="center"><em>TP / FP / FN / TN analysis</em></td>
-    </tr>
-  </table>
-</div>
+### Earlier numbers
 
-### Grad-CAM — Disease Region Visualization
+An earlier version of this README reported SSIM 0.6076 / PSNR 24.04 dB and 76.92% accuracy. Those came from the notebooks, but they were not test results:
 
-Grad-CAM highlights which regions of the FAF image contributed most to the classifier's decision — providing visual explainability with **zero additional training**.
-
-- **Disease images** → focused activation on lesion/scar regions
-- **Normal images** → minimal, diffuse activation (model correctly finds nothing abnormal)
+- **0.6076** was the best single pair out of 259, and the CycleGAN had trained on those photos. Its average over all 259 pairs was 0.2585.
+- **76.92%** (10/13) was the best of 40 epochs, chosen on the same 13 validation photos it was reported on. The split was random by image, so a patient's two eyes could land on both sides. Scored by patient with 5-fold cross-validation, the same recipe averages 45.5%, close to always answering the largest class (43.5%).
+- The Pix2Pix baseline **0.2333** came from an early run trained on 28 pairs. A Pix2Pix trained on all 259 pairs reached 0.2794 on its own validation split.
 
 ---
 
@@ -173,52 +118,52 @@ Grad-CAM highlights which regions of the FAF image contributed most to the class
 
 ### Prerequisites
 
-- Python 3.8+
-- CUDA-capable GPU recommended (runs on CPU, just slower)
+- Python 3.12 (the runs here used PyTorch 2.5.1 and 2.6.0)
+- A CUDA GPU is recommended (it also runs on CPU, more slowly)
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/RetinalAI.git
+git clone https://github.com/AshutoshBhate/RetinalAI.git
 cd RetinalAI
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Training the Models
+### Data and weights
 
-Since model weights are not included in this repo (they are too large for GitHub), you need to train them yourself:
+The hospital data and the trained weights are not in this repo. The scripts in `evaluation/` expect this layout under the repo root:
 
-**1. Train the CycleGAN (CF → FAF translation)**
+```
+Dataset/Actual_Original_Master/<disease>/CF_*.jpg, FAF_*.jpg   (paired photos)
+Dataset/CycleGAN_Data_Unpaired_CF-FAF/{CF,FAF}/                 (unpaired photos)
+Dataset/Final_Merged_CF_Renumbered/{Choroiditis,Normal,Scar}/   (classifier photos)
+Dataset/Splits/                                                 (included)
+```
 
-Open `notebooks/cyclegan/CycleGAN_Training.ipynb` on [Kaggle](https://www.kaggle.com) (recommended — free P100 GPU) or locally with a CUDA GPU. This notebook trains the CycleGAN for 100 epochs on unpaired CF and FAF images.
+### Reproducing the results
 
-You will need:
+Run the scripts in `evaluation/` in order:
 
-- A folder of Colour Fundus (CF) images
-- A folder of FAF images (do not need to be paired)
+| Script | What it does |
+| ------ | ------------ |
+| `Step1_Patient_Split.py` | Groups photos by patient and writes the split lists |
+| `Step2_Old_Classifier_CV.py` | Scores the original classifier recipe with patient-grouped cross-validation |
+| `Step3_Train_CycleGAN_TrainOnly.py` | Trains the CycleGAN without the test patients |
+| `Step4_Train_Pix2Pix_TrainOnly.py` | Trains Pix2Pix without the test patients |
+| `Step5_Score_GANs.py` | Scores both GANs and the baselines on the 39 test pairs |
+| `Step6_Generate_FAF_TrainOnly.py` | Makes synthetic FAFs for the 62 classifier photos |
+| `Step7_Classifier_TrainOnly.py` | Trains and tests the classifier |
+| `Step8_Figures.py` | Draws the figures above |
 
-**2. Generate synthetic FAF images**
+The scripts also need `scikit-learn`, `scikit-image` and `matplotlib`, and Step 4 needs `albumentations` (`pip install scikit-learn scikit-image matplotlib albumentations`). Step 1 also needs the patient lists made from the original hospital files, which are not included. The outputs of my runs are in `evaluation/Results/`.
 
-Use `notebooks/cyclegan/CycleGAN_Bulk_Translation.ipynb` to translate your CF images into synthetic FAF images using the trained generator.
-
-**3. Train the ResNet-18 classifier**
-
-Open `notebooks/resnet/ResNet_Training_3Classes.ipynb`. This fine-tunes a pretrained ResNet-18 on the generated FAF images for 3-class disease classification.
-
-You will need:
-
-- Generated FAF images organized in folders by class (e.g., `Choroiditis/`, `Normal/`, `Scar/`)
-
-**4. Run the Streamlit demo**
+### Run the demo
 
 ```bash
 streamlit run app/Whole_Pipeline.py
 ```
 
-> **Note:** The Streamlit app expects trained weights at specific paths. Update the paths in `Whole_Pipeline.py` (`WEIGHTS_DIR` and `RESNET_WEIGHTS`) to point to your trained model files.
+The app looks for `cycleGAN_Weights_TrainOnly/G_AB_95.pth` and `Codes/Training/Training_3_classes_TrainOnly/resnet_faf_classifier.pth` under the repo root. If the photos are present, its dataset picker offers only the 13 held-out test photos. On those, the app gets 8 of 13 right rather than 7, because it classifies the synthetic FAF straight from memory, while the test classified the saved JPEG.
 
 ---
 
@@ -226,134 +171,83 @@ streamlit run app/Whole_Pipeline.py
 
 ```
 RetinalAI/
-├── README.md                  ← You are here
-├── requirements.txt           ← Python dependencies
-├── .gitignore
-│
+├── README.md
+├── requirements.txt
 ├── app/
-│   └── Whole_Pipeline.py      ← Streamlit GUI — full pipeline demo
-│                                 (CF → FAF → Classification → Grad-CAM)
-│
+│   └── Whole_Pipeline.py           Streamlit demo: CF → FAF → class → Grad-CAM
+├── evaluation/
+│   ├── Networks.py                 Generator and discriminators
+│   ├── Step1 ... Step8             The scripts listed above
+│   └── Results/                    Scores, training logs and figures from my runs
+├── Dataset/Splits/                 Patient split lists
 ├── notebooks/
-│   ├── cyclegan/
-│   │   ├── CycleGAN_Training.ipynb          ← CycleGAN training (100 epochs)
-│   │   ├── CycleGAN_Visualization.ipynb     ← Visualize translation results
-│   │   ├── CycleGAN_EvaluationMetrics.ipynb ← SSIM, PSNR, MAE metrics
-│   │   └── CycleGAN_Bulk_Translation.ipynb  ← Batch CF → FAF translation
-│   │
-│   └── resnet/
-│       ├── ResNet_Training_3Classes.ipynb    ← ResNet-18 fine-tuning (3-class)
-│       ├── ResNet_ConfusionMatrix.ipynb      ← Confusion matrix & metrics
-│       └── ResNet_Inference_Demo.ipynb       ← Inference demo on FAF images
-│
-└── images/                    ← Result visualizations for README
-    ├── block_diagram.png
-    ├── cyclegan_architecture.png
-    ├── cyclegan_output.png
-    ├── confusion_matrix.png
-    ├── dataset_distribution.png
-    ├── inference_results.png
-    ├── per_class_accuracy.png
-    ├── sample_cf.png
-    ├── sample_faf.png
-    └── tp_fp_fn_tn.png
+│   ├── cyclegan/                   Original CycleGAN training, translation and metrics notebooks
+│   └── resnet/                     Original ResNet-18 training and evaluation notebooks
+└── images/                         Figures for this README
 ```
+
+The notebooks are the original project notebooks, kept as they were run. Their numbers are the "earlier numbers" above.
 
 ---
 
 ## How It Works
 
-### Stage 1: CycleGAN (Unpaired Image Translation)
+### Stage 1: CycleGAN (unpaired CF → FAF)
 
-| Component         | Details                                         |
-| ----------------- | ----------------------------------------------- |
-| **Generator**     | UNet with skip connections, 48 initial features |
-| **Discriminator** | PatchGAN with InstanceNorm                      |
-| **Training data** | 315 CF + 309 FAF images (unpaired)              |
-| **Image size**    | 256 × 256 (with jittering augmentation)         |
-| **Epochs**        | 100 (best checkpoint at epoch 95)               |
-| **Platform**      | Kaggle P100 GPU (~63 hours)                     |
-| **Loss**          | Adversarial + Cycle-consistency (L1)            |
+| Component | Details |
+| --------- | ------- |
+| **Generators** | U-Net, 48 base features, BatchNorm, dropout in the first 3 decoder blocks |
+| **Discriminators** | PatchGAN with InstanceNorm, 16×16 output map |
+| **Losses** | Least-squares GAN loss + cycle-consistency L1 (λ = 5); identity loss off |
+| **Training data** | 261 CF + 256 FAF files after removing the test patients |
+| **Augmentation** | Resize to 286, random crop to 256, horizontal flip |
+| **Training** | 96 epochs (0–95), batch size 1, Adam lr 2e-4; weights from epoch 95, fixed in advance |
+| **Time** | 1 h 04 min on a laptop RTX 3050 |
 
-<div align="center">
-  <img src="images/cyclegan_architecture.png" width="600"/>
-  <br>
-  <em>CycleGAN architecture — two generators (G_AB, G_BA) and two discriminators (D_A, D_B)</em>
-</div>
+### Pix2Pix (the paired comparison)
 
-### Stage 2: ResNet-18 (Transfer Learning Classification)
+| Component | Details |
+| --------- | ------- |
+| **Generator** | The same U-Net as the CycleGAN |
+| **Discriminator** | Conditional PatchGAN that sees the CF and the FAF together, 26×26 output map |
+| **Losses** | GAN loss (BCE) + L1 to the real FAF (λ = 100) |
+| **Training data** | 188 paired photos; 32 more pairs from 16 training patients pick the best epoch |
+| **Training** | AdamW lr 2e-4 with cosine restarts, batch size 4, flips, ±40° rotation and colour jitter; best at epoch 11, stopped at epoch 41 |
 
-| Component         | Details                                            |
-| ----------------- | -------------------------------------------------- |
-| **Base model**    | ResNet-18 pretrained on ImageNet                   |
-| **Strategy**      | Frozen convolutional layers, only FC layer trained |
-| **FC layer**      | `nn.Linear(512, 3)` — 3 output classes             |
-| **Training data** | 62 generated FAF images (49 train / 13 val)        |
-| **Optimizer**     | Adam (lr=0.0005)                                   |
-| **Epochs**        | 40 (best at epoch 22)                              |
-| **Accuracy**      | **76.92%** validation accuracy                     |
+### Stage 2: ResNet-18 classifier
 
-### Stage 3: Grad-CAM (Explainability)
+| Component | Details |
+| --------- | ------- |
+| **Base model** | ResNet-18 pretrained on ImageNet |
+| **Training** | Backbone frozen; only the final layer, `nn.Linear(512, 3)`, is trained |
+| **Data** | Synthetic FAFs of the 49 training photos |
+| **Settings** | Adam lr 5e-4, batch size 8, 40 epochs, flip and ±10° rotation |
 
-| Component               | Details                                            |
-| ----------------------- | -------------------------------------------------- |
-| **Method**              | Gradient-weighted Class Activation Mapping         |
-| **Target layer**        | `model.layer4[-1]` (last conv block of ResNet-18)  |
-| **Additional training** | None — uses gradients from the existing classifier |
-| **Output**              | Heatmap overlay showing disease-relevant regions   |
-| **Reference**           | Selvaraju et al., "Grad-CAM", ICCV 2017            |
+### Stage 3: Grad-CAM
 
-### Hardware Component
-
-| Component        | Details             |
-| ---------------- | ------------------- |
-| **Scope**        | 3D-printed housing  |
-| **Lens**         | 20D ophthalmic lens |
-| **Light source** | White LED           |
-| **Camera**       | Standard RGB camera |
-| **Total cost**   | Under ₹5,000        |
+Grad-CAM uses the classifier's gradients at `layer4` to make a 7×7 map of the image regions that pushed it towards its answer, upscaled to the image size. It shows where the classifier looked. It is not a segmentation of the disease, and with a classifier this weak it should not be read as one.
 
 ---
 
-## Tech Stack
+## Limitations
 
-| Layer                 | Technology                                         |
-| --------------------- | -------------------------------------------------- |
-| **Deep Learning**     | PyTorch, TorchVision                               |
-| **Image Translation** | CycleGAN (UNet Generator + PatchGAN Discriminator) |
-| **Classification**    | ResNet-18 (ImageNet pretrained, fine-tuned)        |
-| **Explainability**    | Grad-CAM (custom implementation)                   |
-| **Demo UI**           | Streamlit                                          |
-| **Image Processing**  | OpenCV, Pillow, NumPy                              |
-| **Training Platform** | Kaggle (P100 GPU)                                  |
-
----
-
-## Key Design Decisions
-
-| Decision                        | Rationale                                                                                                        |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **CycleGAN over Pix2Pix**       | No paired data required — more practical for clinical data collection                                            |
-| **UNet generator (not ResNet)** | Skip connections preserve fine spatial details crucial for retinal structures                                    |
-| **3 classes (not 17)**          | Small dataset (62 images) forced a trade-off; 3 classes maximized reliability at 76.92% vs. 58.62% for 5 classes |
-| **ResNet-18 (not ResNet-50)**   | Smaller model prevents overfitting on the tiny dataset                                                           |
-| **Frozen encoder**              | Standard transfer learning — prevents catastrophic forgetting of ImageNet features                               |
-| **Grad-CAM for segmentation**   | Zero additional training, no annotations needed, academically established (ICCV 2017)                            |
+- **Small data.** 22 test patients for the GANs and 13 test photos for the classifier.
+- **One source.** All photos come from the same hospital datasets. There is no external test set.
+- **Pixel metrics.** SSIM and PSNR can't judge whether a synthetic FAF is clinically useful. That needs ophthalmologists to grade the images.
+- **No hardware.** The capture device was planned, not built.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
+MIT License. See [LICENSE](LICENSE).
 
 ## Acknowledgments
 
-- Dataset provided by collaborating ophthalmologists
-- CycleGAN trained on [Kaggle](https://www.kaggle.com) P100 GPU
-- CycleGAN architecture based on [Zhu et al., "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks", ICCV 2017](https://arxiv.org/abs/1703.10593)
-- Grad-CAM based on [Selvaraju et al., "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization", ICCV 2017](https://arxiv.org/abs/1610.02391)
+- Data from collaborating ophthalmologists
+- CycleGAN: [Zhu et al., ICCV 2017](https://arxiv.org/abs/1703.10593)
+- Pix2Pix: [Isola et al., CVPR 2017](https://arxiv.org/abs/1611.07004)
+- Grad-CAM: [Selvaraju et al., ICCV 2017](https://arxiv.org/abs/1610.02391)
 
 ---
 

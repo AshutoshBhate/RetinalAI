@@ -1,0 +1,18 @@
+always answering the biggest class on the test images: 46.2%
+
+== Generated FAF (CycleGAN without test patients): 49 training images (26 patients), 13 test images (7 patients)
+patient-grouped 5-fold accuracy on the training patients: mean 40.0% over 5 seeds (lowest 30.6%, highest 44.9%)
+one-time test on the held-out patients: 7/13 = 53.8%
+confusion matrix, rows = true ['Choroiditis', 'Normal', 'Scar'], columns = predicted
+[[4 0 2]
+ [0 2 1]
+ [3 0 1]]
+saved C:\Users\ashut\BE_Project\Codes\Training\Training_3_classes_TrainOnly\resnet_faf_classifier.pth
+
+== Real CF photos, no GAN: 49 training images (26 patients), 13 test images (7 patients)
+patient-grouped 5-fold accuracy on the training patients: mean 46.9% over 5 seeds (lowest 40.8%, highest 53.1%)
+one-time test on the held-out patients: 5/13 = 38.5%
+confusion matrix, rows = true ['Choroiditis', 'Normal', 'Scar'], columns = predicted
+[[3 2 1]
+ [0 0 3]
+ [2 0 2]]
