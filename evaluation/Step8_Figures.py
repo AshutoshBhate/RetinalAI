@@ -90,6 +90,16 @@ def held_out_examples():
     plt.close(figure)
 
 
+def readme_sample():
+    generator = load_generator(GENERATORS["CycleGAN"])
+    chosen, median = median_examples()
+    cf_image = Image.open(os.path.join(DATASET, chosen[0]["cf"])).convert("RGB")
+    cf_image.resize((256, 256), Image.BICUBIC).save(os.path.join(FIGURES_DIR, "sample_cf.png"))
+    fake = (translate(generator, cf_image) * 255).round().astype(np.uint8)
+    Image.fromarray(fake).save(os.path.join(FIGURES_DIR, "sample_faf.png"))
+    print(f"README sample: {chosen[0]['cf']} ({chosen[0]['disease']}, CycleGAN SSIM {float(chosen[0]['ssim']):.3f}, median {median:.3f})")
+
+
 def test_confusion_matrix():
     with open(os.path.join(RESULTS_DIR, "Step7_Classifier_TrainOnly.json")) as handle:
         result = json.load(handle)[CLASSIFIER_SOURCE]
@@ -114,6 +124,7 @@ def test_confusion_matrix():
 def main():
     os.makedirs(FIGURES_DIR, exist_ok=True)
     held_out_examples()
+    readme_sample()
     test_confusion_matrix()
     print(f"figures saved in {FIGURES_DIR}")
 

@@ -32,20 +32,20 @@ This project asks whether a model can learn to produce the FAF view from the col
       <td><img src="images/sample_faf.png" width="250"/></td>
     </tr>
   </table>
-  <em>An AMD photo from the training set and the original CycleGAN's output for it</em>
+  <em>A held-out test photo (Stargardt disease) and the CycleGAN's output for it. The model never saw this patient; the pair is the one closest to its median score</em>
 </div>
 
 ---
 
 ## Pipeline
 
-```mermaid
-flowchart LR
-    A["Colour fundus photo"] --> B["CycleGAN generator G_AB\n(U-Net, CF → FAF)"]
-    B -- "Synthetic FAF\n(256×256)" --> C["ResNet-18\n(3 classes)"]
-    C --> D["Choroiditis / Normal / Scar"]
-    C --> E["Grad-CAM heatmap\n(where the classifier looked)"]
-```
+<div align="center">
+  <img src="images/block_diagram.png" width="800"/>
+  <br>
+  <em>Training (bottom left) and inference (top). The ResNet trains on synthetic FAFs made from labelled CF photos. In the app, a Grad-CAM heatmap shows where the classifier looked.</em>
+</div>
+
+<br>
 
 A low-cost capture device (3D-printed scope, 20D lens, LED and camera) was planned but never built. Every image in this project comes from the hospital datasets.
 
@@ -193,6 +193,14 @@ The notebooks are the original project notebooks, kept as they were run. Their n
 ## How It Works
 
 ### Stage 1: CycleGAN (unpaired CF → FAF)
+
+<div align="center">
+  <img src="images/cyclegan_architecture.png" width="600"/>
+  <br>
+  <em>Two generators (G_AB: CF → FAF, G_BA: FAF → CF) and two discriminators, trained with adversarial and cycle-consistency losses. The identity loss (marked *) was switched off.</em>
+</div>
+
+<br>
 
 | Component | Details |
 | --------- | ------- |
