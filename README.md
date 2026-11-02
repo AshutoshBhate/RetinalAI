@@ -7,7 +7,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**A B.E. final-year project: a CycleGAN turns a colour fundus photo into a synthetic fundus autofluorescence (FAF) image, a ResNet-18 classifies the synthetic FAF, and a Streamlit app runs both with a Grad-CAM heatmap. A proof of concept on a small hospital dataset, tested on patients the models never saw.**
+**A B.E. final-year project: A CycleGAN turns a colour fundus photo into a synthetic fundus autofluorescence (FAF) image, a ResNet-18 classifies the synthetic FAF, and a Streamlit app runs both with a Grad-CAM heatmap. A proof of concept on a small hospital dataset, tested on patients the models never saw.**
 
 [Pipeline](#pipeline) · [Data](#data-and-the-held-out-test-set) · [Results](#results-on-held-out-patients) · [Getting Started](#getting-started) · [Project Structure](#project-structure) · [How It Works](#how-it-works)
 
@@ -24,8 +24,8 @@ This project asks whether a model can learn to produce the FAF view from the col
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>Input: colour fundus (CF)</b></td>
-      <td align="center"><b>Output: synthetic FAF</b></td>
+      <td align="center"><b>Input: Colour fundus (CF)</b></td>
+      <td align="center"><b>Output: Synthetic FAF</b></td>
     </tr>
     <tr>
       <td><img src="images/sample_cf.png" width="250"/></td>
@@ -53,8 +53,8 @@ A low-cost capture device (3D-printed scope, 20D lens, LED and camera) was plann
 
 ## Data and the Held-Out Test Set
 
-- **Images:** two hospital datasets. The main one has 259 paired CF/FAF photos across 17 diseases; the second adds unpaired photos. The CycleGAN trains on a separate folder of 624 unpaired CF and FAF files. The data is not public.
-- **Patients:** the file names carry no patient IDs, so photos were grouped by patient using the original hospital files. A patient's left and right eye count as one patient. 106 patients in 7 diseases got a patient code. 65 pairs from 10 rarer diseases have none, so they are only ever used for training.
+- **Images:** Two hospital datasets. The main one has 259 paired CF/FAF photos across 17 diseases; the second adds unpaired photos. The CycleGAN trains on a separate folder of 624 unpaired CF and FAF files. The data is not public.
+- **Patients:** The file names carry no patient IDs, so photos were grouped by patient using the original hospital files. A patient's left and right eye count as one patient. 106 patients in 7 diseases got a patient code. 65 pairs from 10 rarer diseases have none, so they are only ever used for training.
 - **Held-out test set:** 22 patients (20% of each disease, fixed seed 2026). Their photos were removed from every training set. Some photos had been re-saved under other names, so photos were also matched by their blood-vessel pattern (SIFT + RANSAC), which is unique to each eye. That found 8 more copies of test patients' eyes, which were removed too.
 - **Classifier set:** 62 CF photos in 3 classes (Choroiditis 27, Normal 13, Scar 22). Training: 49 photos from 26 patients. Test: 13 photos from 7 patients.
 
@@ -64,7 +64,7 @@ The split lists are in [`Dataset/Splits/`](Dataset/Splits) and the code that mak
 
 ## Results on Held-Out Patients
 
-**In short:** on patients the models never saw, Pix2Pix reproduces the real FAF more closely than the CycleGAN on every pixel score, a blurry average image beats both on SSIM, and the classifier is close to guessing, with or without the GAN step.
+**In short:** On patients the models never saw, Pix2Pix reproduces the real FAF more closely than the CycleGAN on every pixel score, a blurry average image beats both on SSIM, and the classifier is close to guessing, with or without the GAN step.
 
 ### CF → FAF translation (39 test pairs from 20 patients)
 
@@ -72,15 +72,15 @@ The split lists are in [`Dataset/Splits/`](Dataset/Splits) and the code that mak
 | ----- | ---- | ---- | --- |
 | CycleGAN, trained without the test patients | 0.258 | 14.07 dB | 0.168 |
 | Pix2Pix, trained without the test patients | 0.324 | 17.40 dB | 0.113 |
-| Baseline: one fixed image, the average training FAF | 0.372 | 17.48 dB | 0.113 |
-| Baseline: a grey copy of the CF photo | 0.237 | 10.69 dB | 0.256 |
+| Baseline: One fixed image, the average training FAF | 0.372 | 17.48 dB | 0.113 |
+| Baseline: A grey copy of the CF photo | 0.237 | 10.69 dB | 0.256 |
 
 SSIM, PSNR and MAE compare the images pixel by pixel. A blurry average image already scores well on them, because they punish a sharp detail in slightly the wrong place more than they punish blur. So this table shows how closely each model reproduces the real FAF pixel by pixel. It cannot show whether the synthetic FAF carries the right clinical detail. Resampling the 20 test patients puts the CycleGAN's SSIM between 0.22 and 0.30 and Pix2Pix's between 0.27 and 0.38 (95% range).
 
 <div align="center">
   <img src="images/heldout_examples.png" width="800"/>
   <br>
-  <em>Test patients the models never saw: the three pairs closest to the CycleGAN's median score, one per disease</em>
+  <em>Test patients the models never saw: The three pairs closest to the CycleGAN's median score, one per disease</em>
 </div>
 
 <br>
